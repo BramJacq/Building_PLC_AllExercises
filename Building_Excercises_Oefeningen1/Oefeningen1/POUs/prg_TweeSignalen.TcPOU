@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="prg_TweeSignalen" Id="{d9a584fe-b010-4267-91fb-b83ff1bd3263}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM prg_TweeSignalen
+VAR
+	S01, S02		AT		%I*		:BOOL; 
+	Q01, Q02		AT		%Q*		:BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Q01 := NOT(S02);
+Q02 := NOT(S01);]]></ST>
+    </Implementation>
+    <LineIds Name="prg_TweeSignalen">
+      <LineId Id="5" Count="0" />
+      <LineId Id="11" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

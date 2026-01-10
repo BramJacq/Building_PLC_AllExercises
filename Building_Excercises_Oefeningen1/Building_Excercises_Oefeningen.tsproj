@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.68">
+	<Project ProjectGUID="{68E1D911-7B4F-4547-8176-4BB685F62777}" Target64Bit="true" ShowHideConfigurations="#x6">
+		<System>
+			<Tasks>
+				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
+					<Name>PlcTask</Name>
+				</Task>
+			</Tasks>
+		</System>
+		<Plc>
+			<Project GUID="{87B26E1A-F1D7-47E9-8B34-A57AAE9303D4}" Name="Oefeningen1" PrjFilePath="Oefeningen1\Oefeningen1.plcproj" TmcFilePath="Oefeningen1\Oefeningen1.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{F17D4D8E-50F0-B7CF-41D3-4F81609790DB}">
+					<Name>Oefeningen1 Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Vars VarGrpType="1">
+						<Name>PlcTask Inputs</Name>
+						<Var>
+							<Name>prg_jafunctie.Ingang</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_TweeSignalen.S01</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_TweeSignalen.S02</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_Reactorvat.S01</Name>
+							<Comment><![CDATA[NiveauTeHoog]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_Reactorvat.S02</Name>
+							<Comment><![CDATA[TemperatuurTeHoog]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_Reactorvat.S03</Name>
+							<Comment><![CDATA[DrukTeHoog]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_Reactorvat.S04</Name>
+							<Comment><![CDATA[StopKnop Normaal Gesloten]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_Reactorvat.S05</Name>
+							<Comment><![CDATA[HoofdSchakelaar]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2" AreaNo="1">
+						<Name>PlcTask Outputs</Name>
+						<Var>
+							<Name>prg_jafunctie.Uitgang</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_TweeSignalen.Q01</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_TweeSignalen.Q02</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_Reactorvat.Q01</Name>
+							<Comment><![CDATA[OranjeLamp (bij detectie 1 sensor)]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_Reactorvat.Q02</Name>
+							<Comment><![CDATA[RodeLamp (bij detectie 2 sensor)]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_Reactorvat.Q05</Name>
+							<Comment><![CDATA[AlarmBel (bij detectie 3 sensor)]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+					</Vars>
+					<Contexts>
+						<Context>
+							<Id>0</Id>
+							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010030</OTCID>
+							</ManualConfig>
+							<Priority>20</Priority>
+							<CycleTime>10000000</CycleTime>
+						</Context>
+					</Contexts>
+					<TaskPouOids>
+						<TaskPouOid Prio="20" OTCID="#x08502001"/>
+					</TaskPouOids>
+				</Instance>
+			</Project>
+		</Plc>
+	</Project>
+</TcSmProject>

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.68">
+	<Project ProjectGUID="{68E1D911-7B4F-4547-8176-4BB685F62777}" Target64Bit="true" ShowHideConfigurations="#x6">
+		<System>
+			<Tasks>
+				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
+					<Name>PlcTask</Name>
+				</Task>
+			</Tasks>
+		</System>
+		<Plc>
+			<Project GUID="{87B26E1A-F1D7-47E9-8B34-A57AAE9303D4}" Name="Oefeningen1" PrjFilePath="Oefeningen1\Oefeningen1.plcproj" TmcFilePath="Oefeningen1\Oefeningen1.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2">
+					<Name>Oefeningen1 Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Contexts>
+						<Context>
+							<Id>1</Id>
+							<Name>Default</Name>
+						</Context>
+					</Contexts>
+				</Instance>
+			</Project>
+		</Plc>
+	</Project>
+</TcSmProject>

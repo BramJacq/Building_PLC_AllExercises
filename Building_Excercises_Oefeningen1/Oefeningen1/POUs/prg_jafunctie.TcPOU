@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="prg_jafunctie" Id="{672652f4-dbb3-4fa0-8d2f-9da87f6e4f8c}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM prg_jafunctie
+VAR
+	Ingang		AT		%I*		:BOOL;
+	Uitgang		AT		%Q*		:BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Uitgang := Ingang;]]></ST>
+    </Implementation>
+    <LineIds Name="prg_jafunctie">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

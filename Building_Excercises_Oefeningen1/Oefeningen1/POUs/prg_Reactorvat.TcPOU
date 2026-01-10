@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="prg_Reactorvat" Id="{5b4f742f-3a4b-409a-a5f3-55323ab5d92f}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM prg_Reactorvat
+VAR
+	S01			AT		%I*		:BOOL;	//NiveauTeHoog
+	S02			AT		%I*		:BOOL;	//TemperatuurTeHoog
+	S03			AT		%I*		:BOOL;  //DrukTeHoog
+	S04			AT		%I*		:BOOL;	//StopKnop Normaal Gesloten
+	S05			AT		%I*		:BOOL;	//HoofdSchakelaar
+	
+	Q01			AT		%Q*		:BOOL;	//OranjeLamp (bij detectie 1 sensor)
+	Q02			AT		%Q*		:BOOL;	//RodeLamp (bij detectie 2 sensor)
+	Q05			AT		%Q*		:BOOL;	//AlarmBel (bij detectie 3 sensor)
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Q01 := S05 AND (S01 OR S02 OR S03);
+Q02 := S05 AND ((S01 AND S02) OR
+			    (S01 AND S03) OR
+			    (S02 AND S03));
+Q05 := (S04 AND S05) AND (S01 AND S02 AND S03);
+]]></ST>
+    </Implementation>
+    <LineIds Name="prg_Reactorvat">
+      <LineId Id="5" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="23" Count="1" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="25" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
