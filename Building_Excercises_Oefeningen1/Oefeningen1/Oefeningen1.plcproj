@@ -26,6 +26,9 @@
     <Compile Include="POUs\prg_jafunctie.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\PRG_OpslagFoutDetectie.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\prg_Opslagvat.TcPOU">
       <SubType>Code</SubType>
     </Compile>

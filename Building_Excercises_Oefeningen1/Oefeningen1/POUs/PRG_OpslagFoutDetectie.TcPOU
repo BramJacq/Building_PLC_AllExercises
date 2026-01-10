@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
-  <POU Name="prg_Opslagvat" Id="{a9d293a4-d2f4-4668-a4b2-c79a3cbb2abb}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM prg_Opslagvat
+  <POU Name="PRG_OpslagFoutDetectie" Id="{f6aa53c6-2d27-467c-ac67-f01685315add}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_OpslagFoutDetectie
 VAR
 	SensorHoog		AT		%I*		:BOOL;
 	SensorLaag		AT		%I*		:BOOL;
@@ -17,19 +17,15 @@ END_VAR
       <ST><![CDATA[Klep := SensorLaag AND NOT(SensorHoog);
 Vullen := SensorLaag AND NOT(SensorHoog);
 
-IF StopKnop OR SensorLaag OR Vullen THEN
+IF StopKnop OR SensorLaag OR Vullen OR (SensorHoog AND NOT SensorLaag) THEN
 	Pomp := FALSE;
 ELSIF StartKnop THEN
 	Pomp := TRUE; 
 END_IF]]></ST>
     </Implementation>
-    <LineIds Name="prg_Opslagvat">
+    <LineIds Name="PRG_OpslagFoutDetectie">
+      <LineId Id="6" Count="6" />
       <LineId Id="5" Count="0" />
-      <LineId Id="18" Count="0" />
-      <LineId Id="27" Count="0" />
-      <LineId Id="20" Count="1" />
-      <LineId Id="25" Count="1" />
-      <LineId Id="22" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

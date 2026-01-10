@@ -10,7 +10,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{87B26E1A-F1D7-47E9-8B34-A57AAE9303D4}" Name="Oefeningen1" PrjFilePath="Oefeningen1\Oefeningen1.plcproj" TmcFilePath="Oefeningen1\Oefeningen1.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{C18A9FB8-0BE0-76BC-E5CC-251DC40CF787}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{D2537A13-3151-02E1-17CB-CFA7FF59D967}">
 					<Name>Oefeningen1 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -68,6 +68,22 @@
 							<Name>prg_Opslagvat.StopKnop</Name>
 							<Type>BOOL</Type>
 						</Var>
+						<Var>
+							<Name>PRG_OpslagFoutDetectie.SensorHoog</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_OpslagFoutDetectie.SensorLaag</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_OpslagFoutDetectie.StartKnop</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_OpslagFoutDetectie.StopKnop</Name>
+							<Type>BOOL</Type>
+						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
@@ -108,6 +124,18 @@
 						</Var>
 						<Var>
 							<Name>prg_Opslagvat.Vullen</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_OpslagFoutDetectie.Klep</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_OpslagFoutDetectie.Pomp</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_OpslagFoutDetectie.Vullen</Name>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>
