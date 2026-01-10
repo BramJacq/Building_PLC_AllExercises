@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="prg_MotorMetDrukknop" Id="{7270e293-eb2f-4d69-a11e-ba48b35146ec}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM prg_MotorMetDrukknop
+VAR
+  	T1: R_TRIG;     // eerste druk → links
+    T2: R_TRIG;     // tweede druk → stop links
+    T3: R_TRIG;     // derde druk → rechts
+    T4: R_TRIG;     // vierde druk → stop rechts
+	Drukknop		AT		%I*		:BOOL;
+	Hoofdschakelaar	AT		%I*		:BOOL;
+	
+	MotorLinks		AT		%Q*		:BOOL;
+	MotorRechts		AT		%Q*		:BOOL;
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// 1e druk: start MotorLinks
+T1(CLK := Drukknop AND Hoofdschakelaar AND NOT MotorLinks AND NOT MotorRechts);
+MotorLinks := T1.Q;
+
+// 2e druk: stop MotorLinks
+T2(CLK := Drukknop AND MotorLinks);
+MotorLinks := MotorLinks AND NOT T2.Q;
+
+// 3e druk: start MotorRechts
+T3(CLK := Drukknop AND NOT MotorLinks AND NOT MotorRechts AND NOT T2.Q);
+MotorRechts := T3.Q;
+
+// 4e druk: stop MotorRechts
+T4(CLK := Drukknop AND MotorRechts);
+MotorRechts := MotorRechts AND NOT T4.Q;
+]]></ST>
+    </Implementation>
+    <LineIds Name="prg_MotorMetDrukknop">
+      <LineId Id="41" Count="14" />
+      <LineId Id="21" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

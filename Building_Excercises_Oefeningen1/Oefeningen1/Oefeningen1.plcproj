@@ -29,6 +29,9 @@
     <Compile Include="POUs\prg_jafunctie.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\prg_MotorMetDrukknop.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\PRG_OpslagFoutDetectie.TcPOU">
       <SubType>Code</SubType>
     </Compile>

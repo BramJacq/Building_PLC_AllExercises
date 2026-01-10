@@ -10,7 +10,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{87B26E1A-F1D7-47E9-8B34-A57AAE9303D4}" Name="Oefeningen1" PrjFilePath="Oefeningen1\Oefeningen1.plcproj" TmcFilePath="Oefeningen1\Oefeningen1.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{7EAE0C34-1BA2-E984-34AF-267DC0BA7231}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{44C0C463-E9C0-8E8B-D885-3E9AEFB47EFC}">
 					<Name>Oefeningen1 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -115,6 +115,14 @@
 							<Name>prg_Teleruptorschakeling.Drukknop3</Name>
 							<Type>BOOL</Type>
 						</Var>
+						<Var>
+							<Name>prg_MotorMetDrukknop.Drukknop</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_MotorMetDrukknop.Hoofdschakelaar</Name>
+							<Type>BOOL</Type>
+						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
@@ -196,6 +204,14 @@
 						</Var>
 						<Var>
 							<Name>prg_Teleruptorschakeling.Verlichting</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_MotorMetDrukknop.MotorLinks</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_MotorMetDrukknop.MotorRechts</Name>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>
