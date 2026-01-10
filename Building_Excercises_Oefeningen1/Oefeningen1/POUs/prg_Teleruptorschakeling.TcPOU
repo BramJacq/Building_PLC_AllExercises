@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="prg_Teleruptorschakeling" Id="{324616b1-c4ae-490d-91f6-a4d7b755b292}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM prg_Teleruptorschakeling
+VAR
+	Drukknop1		AT		%I*		:BOOL;
+	Drukknop2		AT		%I*		:BOOL;
+	Drukknop3		AT		%I*		:BOOL;
+	
+	Verlichting		AT		%Q*		:BOOL;
+	RisingEdge: R_TRIG;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[RisingEdge(CLK := Drukknop1 OR Drukknop2 OR Drukknop3);
+
+IF RisingEdge.Q THEN
+    Verlichting := NOT Verlichting; //Wisselt tussen Aan en uit, als hij aan is wordt hij NOT aan dus uit, als hij uit is wordt hij NOT uit dus aan
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="prg_Teleruptorschakeling">
+      <LineId Id="13" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="14" Count="1" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

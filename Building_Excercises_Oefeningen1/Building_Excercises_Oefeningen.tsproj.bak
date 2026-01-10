@@ -10,7 +10,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{87B26E1A-F1D7-47E9-8B34-A57AAE9303D4}" Name="Oefeningen1" PrjFilePath="Oefeningen1\Oefeningen1.plcproj" TmcFilePath="Oefeningen1\Oefeningen1.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{D2537A13-3151-02E1-17CB-CFA7FF59D967}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{EF1649C9-6874-D5AB-5E35-132840DF515D}">
 					<Name>Oefeningen1 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -84,6 +84,25 @@
 							<Name>PRG_OpslagFoutDetectie.StopKnop</Name>
 							<Type>BOOL</Type>
 						</Var>
+						<Var>
+							<Name>prg_Alarmbewaking.Sensor1</Name>
+							<Comment><![CDATA[Druk Te Hoog (True)]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_Alarmbewaking.Sensor2</Name>
+							<Comment><![CDATA[Temperatuur Te Hoog (True)]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_Alarmbewaking.Sensor3</Name>
+							<Comment><![CDATA[Laag vloeistof (True) In de oefening moet dit false zijn maar dit is gewoon verwarrend maak er dan NOT(..) van waar deze voorkomt in het programma]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_Alarmbewaking.DrukKnop</Name>
+							<Type>BOOL</Type>
+						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
@@ -136,6 +155,31 @@
 						</Var>
 						<Var>
 							<Name>PRG_OpslagFoutDetectie.Vullen</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_Alarmbewaking.Lamp1</Name>
+							<Comment><![CDATA[Druk Te Hoog]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_Alarmbewaking.Lamp2</Name>
+							<Comment><![CDATA[Temperatuur Te Hoog]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_Alarmbewaking.Lamp3</Name>
+							<Comment><![CDATA[Vloeistof Te Laag]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_Alarmbewaking.Lamp4</Name>
+							<Comment><![CDATA[TweeAlarmen]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_Alarmbewaking.Lamp5</Name>
+							<Comment><![CDATA[Drie Alarmen]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>

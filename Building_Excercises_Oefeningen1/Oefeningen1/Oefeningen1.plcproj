@@ -38,6 +38,9 @@
     <Compile Include="POUs\prg_Reactorvat.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\prg_Teleruptorschakeling.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\prg_TweeSignalen.TcPOU">
       <SubType>Code</SubType>
     </Compile>
