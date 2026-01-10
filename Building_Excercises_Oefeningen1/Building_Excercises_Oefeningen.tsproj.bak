@@ -10,7 +10,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{87B26E1A-F1D7-47E9-8B34-A57AAE9303D4}" Name="Oefeningen1" PrjFilePath="Oefeningen1\Oefeningen1.plcproj" TmcFilePath="Oefeningen1\Oefeningen1.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{28F4EBCE-9086-A361-86C2-CFCDF15957CC}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{F17D4D8E-50F0-B7CF-41D3-4F81609790DB}">
 					<Name>Oefeningen1 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -27,6 +27,31 @@
 							<Name>prg_TweeSignalen.S02</Name>
 							<Type>BOOL</Type>
 						</Var>
+						<Var>
+							<Name>prg_Reactorvat.S01</Name>
+							<Comment><![CDATA[NiveauTeHoog]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_Reactorvat.S02</Name>
+							<Comment><![CDATA[TemperatuurTeHoog]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_Reactorvat.S03</Name>
+							<Comment><![CDATA[DrukTeHoog]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_Reactorvat.S04</Name>
+							<Comment><![CDATA[StopKnop Normaal Gesloten]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_Reactorvat.S05</Name>
+							<Comment><![CDATA[HoofdSchakelaar]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
@@ -40,6 +65,21 @@
 						</Var>
 						<Var>
 							<Name>prg_TweeSignalen.Q02</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_Reactorvat.Q01</Name>
+							<Comment><![CDATA[OranjeLamp (bij detectie 1 sensor)]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_Reactorvat.Q02</Name>
+							<Comment><![CDATA[RodeLamp (bij detectie 2 sensor)]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_Reactorvat.Q05</Name>
+							<Comment><![CDATA[AlarmBel (bij detectie 3 sensor)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>
