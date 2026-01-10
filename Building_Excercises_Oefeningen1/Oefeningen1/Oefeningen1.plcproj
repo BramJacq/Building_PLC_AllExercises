@@ -23,6 +23,9 @@
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\prg_Alarmbewaking.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\prg_jafunctie.TcPOU">
       <SubType>Code</SubType>
     </Compile>

@@ -10,11 +10,12 @@ END_VAR
 prg_TweeSignalen();
 prg_Reactorvat();
 prg_Opslagvat();
-PRG_OpslagFoutDetectie();]]></ST>
+PRG_OpslagFoutDetectie();
+prg_Alarmbewaking();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
-      <LineId Id="6" Count="3" />
+      <LineId Id="6" Count="4" />
     </LineIds>
   </POU>
 </TcPlcObject>

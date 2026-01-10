@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="prg_Alarmbewaking" Id="{d816c7c6-aa67-463e-b00c-2a6330d8cd6a}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM prg_Alarmbewaking
+VAR
+	Sensor1		AT		%I*		:BOOL; //Druk Te Hoog (True)
+	Sensor2		AT		%I*		:BOOL; //Temperatuur Te Hoog (True)
+	Sensor3		AT		%I*		:BOOL; //Laag vloeistof (True) In de oefening moet dit false zijn maar dit is gewoon verwarrend maak er dan NOT(..) van waar deze voorkomt in het programma
+	DrukKnop	AT		%I*		:BOOL;
+	
+	Lamp1		AT		%Q*		:BOOL; //Druk Te Hoog
+	Lamp2		AT		%Q*		:BOOL; //Temperatuur Te Hoog
+	Lamp3		AT		%Q*		:BOOL; //Vloeistof Te Laag
+	Lamp4		AT		%Q*		:BOOL; //TweeAlarmen
+	Lamp5		AT		%Q*		:BOOL; //Drie Alarmen
+	
+	
+	SetReset: SR;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Lamp1 := Sensor1;
+Lamp2 := Sensor2;
+Lamp3 := Sensor3;
+
+Lamp4 := (NOT(Sensor1) AND Sensor2 AND Sensor3) OR
+		 (Sensor1 AND NOT(Sensor2) AND Sensor3) OR
+		 (Sensor1 AND Sensor2 AND NOT Sensor3);
+
+SetReset(SET1:= Sensor1 AND Sensor2 AND Sensor3, RESET:=DrukKnop , Q1=> Lamp5);]]></ST>
+    </Implementation>
+    <LineIds Name="prg_Alarmbewaking">
+      <LineId Id="5" Count="0" />
+      <LineId Id="22" Count="1" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="26" Count="1" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="32" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
