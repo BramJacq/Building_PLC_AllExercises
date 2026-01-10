@@ -13,11 +13,12 @@ prg_Opslagvat();
 PRG_OpslagFoutDetectie();
 prg_Alarmbewaking();
 prg_Teleruptorschakeling();
-prg_MotorMetDrukknop();]]></ST>
+prg_MotorMetDrukknop();
+prg_TweePompen();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
-      <LineId Id="6" Count="6" />
+      <LineId Id="6" Count="7" />
     </LineIds>
   </POU>
 </TcPlcObject>

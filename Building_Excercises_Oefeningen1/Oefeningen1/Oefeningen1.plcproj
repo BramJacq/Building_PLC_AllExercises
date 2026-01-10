@@ -26,6 +26,9 @@
     <Compile Include="POUs\prg_Alarmbewaking.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\prg_DriePompen.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\prg_jafunctie.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -42,6 +45,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\prg_Teleruptorschakeling.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\prg_TweePompen.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\prg_TweeSignalen.TcPOU">

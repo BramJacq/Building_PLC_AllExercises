@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="prg_TweePompen" Id="{7048cf9a-ec8a-4d58-be81-622fef65ddd6}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM prg_TweePompen
+VAR
+	Hoofdschakelaar			AT		%I*		:BOOL;
+	StartKnop				AT		%I*		:BOOL;
+	StopKnop				AT		%I*		:BOOL;
+	NiveauSchakelaarOnder	AT		%I*		:BOOL;
+	NiveauSchakelaarBoven	AT		%I*		:BOOL;
+	
+	Pomp1					AT		%Q*		:BOOL;
+	Pomp2					AT		%Q*		:BOOL;
+	PompWissel: BOOL;
+	PompAan: BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF Hoofdschakelaar AND (StartKnop OR NiveauSchakelaarOnder) AND NOT (StopKnop OR NiveauSchakelaarBoven) THEN
+	PompAan:=TRUE;
+END_IF
+
+IF PompAan AND NOT Pomp1 AND NOT Pomp2 THEN
+	PompWissel:= NOT PompWissel;
+END_IF
+
+IF PompAan THEN
+    Pomp1 := PompWissel;
+    Pomp2 := NOT PompWissel;
+ELSE
+    Pomp1 := FALSE;
+    Pomp2 := FALSE;
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="prg_TweePompen">
+      <LineId Id="5" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="20" Count="1" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="39" Count="0" />
+      <LineId Id="45" Count="5" />
+      <LineId Id="34" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
