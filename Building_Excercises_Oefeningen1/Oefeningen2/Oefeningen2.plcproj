@@ -32,6 +32,9 @@
     <Compile Include="POUs\prg_PotentioMeter.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\prg_Processbewaking3Vaten.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\prg_TolerantiesEnHysteresis.TcPOU">
       <SubType>Code</SubType>
     </Compile>

@@ -9,11 +9,12 @@ END_VAR
       <ST><![CDATA[prg_PotentioMeter();
 prg_DynamischVerschalen();
 prg_TolerantiesEnHysteresis();
-prg_VerschalenDisplay();]]></ST>
+prg_VerschalenDisplay();
+prg_Processbewaking3Vaten();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
-      <LineId Id="6" Count="2" />
+      <LineId Id="6" Count="3" />
     </LineIds>
   </POU>
 </TcPlcObject>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="prg_Processbewaking3Vaten" Id="{04ad4257-ddf2-49d7-966a-09b80f94a913}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM prg_Processbewaking3Vaten
+VAR
+	nVatWaarde1, nVatWaarde2, nVatWaarde3		AT		%I*		:INT;
+	nVat1, nVat2, nVat3							AT		%Q*		:INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[nVat1 := nVatWaarde1 * 2000 /32767;
+nVat2 := nVatWaarde2 * 3000 /32767;
+nVat3 := nVatWaarde3 * 5000 /32767;
+
+//Of misschien beter voor afronding maar onnodig lang:
+//nVat1 := REAL_TO_INT(INT_TO_REAL(nVatWaarde1) * 2000 / 32767);
+//nVat2 := REAL_TO_INT(INT_TO_REAL(nVatWaarde2) * 3000 / 32767);
+//nVat3 := REAL_TO_INT(INT_TO_REAL(nVatWaarde3) * 5000 / 32767);]]></ST>
+    </Implementation>
+    <LineIds Name="prg_Processbewaking3Vaten">
+      <LineId Id="5" Count="0" />
+      <LineId Id="7" Count="1" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="13" Count="1" />
+      <LineId Id="12" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
