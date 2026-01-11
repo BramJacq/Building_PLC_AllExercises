@@ -150,7 +150,7 @@
 | Main | [`MAIN.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen2/POUs/MAIN.TcPOU) |
 | Potentiometer | [`prg_PotentioMeter.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen2/POUs/prg_PotentioMeter.TcPOU) |
 | Dynamisch verschalen | [`prg_DynamischVerschalen.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen2/POUs/prg_DynamischVerschalen.TcPOU) |
-| Analoge waarden visualiseren | [`Visualization_DynamischVerschalen.TcVIS`](./Building_Excercises_Oefeningen1/Oefeningen2/VISUsVisualization_DynamischVerschalen.TcVIS) |
+| Analoge waarden visualiseren | [`Visualization_DynamischVerschalen.TcVIS`](./Building_Excercises_Oefeningen1/Oefeningen2/VISUs/Visualization_DynamischVerschalen.TcVIS) |
 | Toleranties en Hysteresis | [`prg_TolerantiesEnHysteresis.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen2/POUs/prg_TolerantiesEnHysteresis.TcPOU) |
 | Display | [`prg_VerschalenDisplay.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen2/POUs/prg_VerschalenDisplay.TcPOU) |
 | Processbewaking 3 vaten | [`prg_Processbewaking3Vaten.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen2/POUs/prg_Processbewaking3Vaten.TcPOU) |
@@ -187,12 +187,6 @@
   - >10% boven gevraagd → groene LED
   - binnen 10% → vorige toestand behouden
 - Visualiseer beide waarden en LED-status
-
----
-
-### Waardeschaling met een libraryfunctie
-- Voeg library toe via **References**
-- Gebruik **F_Scale** om analoge waarden te verschalen
 
 ---
 
