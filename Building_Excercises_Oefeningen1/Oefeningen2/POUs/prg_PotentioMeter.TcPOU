@@ -3,13 +3,22 @@
   <POU Name="prg_PotentioMeter" Id="{3e99a89c-11db-41cc-9b1c-93b47ac9ccc3}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM prg_PotentioMeter
 VAR
+	nPotentioMeter		AT		%I*		:INT;
+	
+	nPotPower			AT		%Q*		:INT := 32767; //Potentiometer voeden met 5V
+	nWaarde				AT		%Q*		:REAL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[nWaarde := INT_TO_REAL(nPotentioMeter)*100 / 32767;
+
+//Ander Oplossing:
+//nWaarde:= INT_TO_REAL(nPotentioMeter) /327.67;]]></ST>
     </Implementation>
     <LineIds Name="prg_PotentioMeter">
-      <LineId Id="5" Count="0" />
+      <LineId Id="14" Count="1" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="11" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
