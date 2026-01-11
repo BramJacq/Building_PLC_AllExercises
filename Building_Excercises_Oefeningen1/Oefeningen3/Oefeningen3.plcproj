@@ -26,6 +26,12 @@
     <Compile Include="POUs\prg_AutomatischeDeur.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\prg_Belsignaal.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\prg_DraaiRichtingMotor.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\prg_Knipperlicht.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -33,6 +39,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\prg_OpenbaarToilet.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\prg_Parking.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\prg_ProductenTellen.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\prg_Setpointsturing.TcPOU">
