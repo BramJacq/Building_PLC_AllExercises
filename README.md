@@ -234,7 +234,9 @@
 
 ## 📝 Oefeningen 3 — Opgaves
 
+---
 ### Oefeningen (Timers)
+---
 
 #### Teleruptor bediening
 Een teleruptor, ook wel bekend als een impulsrelais, is een relais die ontworpen is om een elektrische belasting, zoals verlichting, aan/uit te schakelen met één enkele impuls. Wanneer een impuls wordt toegepast (bijvoorbeeld door een drukknop in te drukken), schakelt de teleruptor de belasting in. Als er opnieuw een impuls wordt toegepast, schakelt de teleruptor de belasting uit.
@@ -302,9 +304,10 @@ De deur wordt automatisch gesloten 1 seconde nadat het detectiesignaal is weggev
 #### Setpointsturing met korte en lange drukknoppen (11 regels)
 Stel een setpoint van 0 tot 1.000 in door middel van twee druktoetsen (+ en –) die op het display getoond worden. Met één enkele klik (< 1 s) verhoogt of verlaagt men de waarde telkens met 1 (display)punt, en bij een lange druk (> 1 s) verandert de waarde continu met 100 (display)punten per seconde in de richting van de ingedrukte knop. De waarde mag nooit onder 0 of boven 1000 komen. Het uiteindelijke setpoint wordt lineair omgerekend naar een uitgangsspanning tussen 0 en 10 V voor aansturing via de EL4002.
 
----
 
+---
 ### Oefeningen (Flankdetectie)
+---
 
 #### Draairichting van een motor (2 regel code)
 Op de as van een motor worden twee sensoren gemonteerd bv reflex fotocellen. Bepaal de draairichting met flankdetectie.
@@ -322,9 +325,10 @@ Uitbreiding: Tel het aantal binnenkomende klanten met een counter FB.
 
 Uitbreiding: Om te vermijden dat de bel blijft rinkelen als een klant aan de deur blijft stilstaan zal de bel of zoemer slechts 0,5 seconde werken.
 
----
 
+---
 ### Oefeningen (Counters)
+---
 
 #### Parking
 Maak een visualisatie die de in- en uitgang van een parking voor personenwagens simuleert.
