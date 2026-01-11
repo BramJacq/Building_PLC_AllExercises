@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="prg_TolerantiesEnHysteresis" Id="{58e906c0-2183-414e-a651-ae522f83863d}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM prg_TolerantiesEnHysteresis
+VAR
+	nTemperatuurGevraagd	AT %I* : REAL;   // via visualisatie (180–230)
+	nTemperatuurMeting		AT %I* : INT;    // potentiometer
+
+	nPotPower				AT %Q* : INT := 32767;
+
+	GroeneLed				AT %Q* : BOOL;
+	RodeLed					AT %Q* : BOOL;
+
+	nGemeten				: REAL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[nGemeten := INT_TO_REAL(nTemperatuurMeting) * 250 / 32767;
+
+IF nGemeten < nTemperatuurGevraagd * 0.9 THEN
+	RodeLed := TRUE;  GroeneLed := FALSE;
+ELSIF nGemeten > nTemperatuurGevraagd * 1.1 THEN
+	GroeneLed := TRUE;  RodeLed := FALSE;
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="prg_TolerantiesEnHysteresis">
+      <LineId Id="41" Count="0" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="24" Count="3" />
+      <LineId Id="15" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

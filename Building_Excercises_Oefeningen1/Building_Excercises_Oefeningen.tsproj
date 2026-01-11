@@ -287,7 +287,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{D63DA16B-DEA3-4D8E-AB37-631E9FB30855}" Name="Oefeningen2" PrjFilePath="Oefeningen2\Oefeningen2.plcproj" TmcFilePath="Oefeningen2\Oefeningen2.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{14EE2929-211C-1886-91A7-D8FAA772556B}">
+				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{64D47B15-3D07-42BF-A1CD-D9562250F126}">
 					<Name>Oefeningen2 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -298,6 +298,16 @@
 						</Var>
 						<Var>
 							<Name>prg_DynamischVerschalen.nPotentioMeter</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>prg_TolerantiesEnHysteresis.nTemperatuurGevraagd</Name>
+							<Comment><![CDATA[ via visualisatie (180–230)]]></Comment>
+							<Type>REAL</Type>
+						</Var>
+						<Var>
+							<Name>prg_TolerantiesEnHysteresis.nTemperatuurMeting</Name>
+							<Comment><![CDATA[ potentiometer]]></Comment>
 							<Type>INT</Type>
 						</Var>
 					</Vars>
@@ -324,6 +334,18 @@
 						<Var>
 							<Name>prg_DynamischVerschalen.nScaledMax</Name>
 							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>prg_TolerantiesEnHysteresis.GroeneLed</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_TolerantiesEnHysteresis.nPotPower</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>prg_TolerantiesEnHysteresis.RodeLed</Name>
+							<Type>BOOL</Type>
 						</Var>
 					</Vars>
 					<Contexts>
