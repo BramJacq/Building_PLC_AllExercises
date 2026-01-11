@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="prg_PotentioMeter" Id="{3e99a89c-11db-41cc-9b1c-93b47ac9ccc3}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM prg_PotentioMeter
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <LineIds Name="prg_PotentioMeter">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
