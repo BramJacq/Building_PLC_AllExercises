@@ -8,11 +8,12 @@ END_VAR
     <Implementation>
       <ST><![CDATA[prg_PotentioMeter();
 prg_DynamischVerschalen();
-prg_TolerantiesEnHysteresis();]]></ST>
+prg_TolerantiesEnHysteresis();
+prg_VerschalenDisplay();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
-      <LineId Id="6" Count="1" />
+      <LineId Id="6" Count="2" />
     </LineIds>
   </POU>
 </TcPlcObject>

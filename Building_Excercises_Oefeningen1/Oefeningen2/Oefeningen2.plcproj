@@ -35,6 +35,9 @@
     <Compile Include="POUs\prg_TolerantiesEnHysteresis.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\prg_VerschalenDisplay.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Visualization Manager.TcVMO">
       <SubType>Code</SubType>
     </Compile>
@@ -94,6 +97,7 @@
     </PlaceholderReference>
     <PlaceholderReference Include="Tc2_BABasic">
       <DefaultResolution>Tc2_BABasic, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_BABasic</Namespace>
     </PlaceholderReference>
     <PlaceholderReference Include="Tc2_Standard">
       <DefaultResolution>Tc2_Standard, * (Beckhoff Automation GmbH)</DefaultResolution>

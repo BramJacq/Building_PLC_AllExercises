@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="prg_VerschalenDisplay" Id="{1f1518e3-7892-4b3f-92b4-c0836a4d9eb1}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM prg_VerschalenDisplay
+VAR
+	nPotentioMeter		AT		%I*		:INT;
+	
+	nPotPower			AT		%Q*		:INT := 32767; //Potentiometer voeden met 5V
+	nWaarde				AT		%Q*		:INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[nWaarde := nPotentioMeter * 1000 / 32767;
+
+//Misschien zelfs beter maar onnodig moeilijke oplossing:
+//	nWaarde := REAL_TO_INT(INT_TO_REAL(nPotentioMeter) * 1000 / 32767);]]></ST>
+    </Implementation>
+    <LineIds Name="prg_VerschalenDisplay">
+      <LineId Id="5" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="12" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

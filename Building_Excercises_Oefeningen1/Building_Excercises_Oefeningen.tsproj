@@ -287,7 +287,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{D63DA16B-DEA3-4D8E-AB37-631E9FB30855}" Name="Oefeningen2" PrjFilePath="Oefeningen2\Oefeningen2.plcproj" TmcFilePath="Oefeningen2\Oefeningen2.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{64D47B15-3D07-42BF-A1CD-D9562250F126}">
+				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{16AC9873-D82E-A05B-F64F-C2F463E55472}">
 					<Name>Oefeningen2 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -308,6 +308,10 @@
 						<Var>
 							<Name>prg_TolerantiesEnHysteresis.nTemperatuurMeting</Name>
 							<Comment><![CDATA[ potentiometer]]></Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>prg_VerschalenDisplay.nPotentioMeter</Name>
 							<Type>INT</Type>
 						</Var>
 					</Vars>
@@ -346,6 +350,15 @@
 						<Var>
 							<Name>prg_TolerantiesEnHysteresis.RodeLed</Name>
 							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_VerschalenDisplay.nPotPower</Name>
+							<Comment><![CDATA[Potentiometer voeden met 5V]]></Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>prg_VerschalenDisplay.nWaarde</Name>
+							<Type>INT</Type>
 						</Var>
 					</Vars>
 					<Contexts>
