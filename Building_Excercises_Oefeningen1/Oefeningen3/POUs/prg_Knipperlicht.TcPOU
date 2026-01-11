@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="prg_Knipperlicht" Id="{61454f28-08ee-4c85-9cc4-a1747181c29c}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM prg_Knipperlicht
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <LineIds Name="prg_Knipperlicht">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

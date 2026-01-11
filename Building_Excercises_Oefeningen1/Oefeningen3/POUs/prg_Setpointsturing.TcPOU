@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="prg_Setpointsturing" Id="{6a0f88b7-fb46-465c-8ecf-3f86cad7e03d}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM prg_Setpointsturing
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <LineIds Name="prg_Setpointsturing">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

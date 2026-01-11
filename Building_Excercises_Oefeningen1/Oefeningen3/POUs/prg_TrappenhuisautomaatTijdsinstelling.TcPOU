@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="prg_TrappenhuisautomaatTijdsinstelling" Id="{fec349af-33a3-4bce-b25c-3eeceaf35561}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM prg_TrappenhuisautomaatTijdsinstelling
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <LineIds Name="prg_TrappenhuisautomaatTijdsinstelling">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

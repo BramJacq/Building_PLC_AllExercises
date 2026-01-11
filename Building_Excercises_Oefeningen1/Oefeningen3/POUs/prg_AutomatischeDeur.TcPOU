@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="prg_AutomatischeDeur" Id="{e8dcdb5a-fded-4c90-a061-70c9e66c14c6}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM prg_AutomatischeDeur
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <LineIds Name="prg_AutomatischeDeur">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
