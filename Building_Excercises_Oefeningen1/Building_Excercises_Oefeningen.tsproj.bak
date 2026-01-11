@@ -287,7 +287,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{D63DA16B-DEA3-4D8E-AB37-631E9FB30855}" Name="Oefeningen2" PrjFilePath="Oefeningen2\Oefeningen2.plcproj" TmcFilePath="Oefeningen2\Oefeningen2.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{16AC9873-D82E-A05B-F64F-C2F463E55472}">
+				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{A6C95DDA-3ADB-61E0-280E-1505247436F1}">
 					<Name>Oefeningen2 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -312,6 +312,18 @@
 						</Var>
 						<Var>
 							<Name>prg_VerschalenDisplay.nPotentioMeter</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>prg_Processbewaking3Vaten.nVatWaarde1</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>prg_Processbewaking3Vaten.nVatWaarde2</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>prg_Processbewaking3Vaten.nVatWaarde3</Name>
 							<Type>INT</Type>
 						</Var>
 					</Vars>
@@ -358,6 +370,18 @@
 						</Var>
 						<Var>
 							<Name>prg_VerschalenDisplay.nWaarde</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>prg_Processbewaking3Vaten.nVat1</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>prg_Processbewaking3Vaten.nVat2</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>prg_Processbewaking3Vaten.nVat3</Name>
 							<Type>INT</Type>
 						</Var>
 					</Vars>
