@@ -3,13 +3,28 @@
   <POU Name="prg_DynamischVerschalen" Id="{010acd25-5d1e-456e-9bef-2c5ae678a5bc}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM prg_DynamischVerschalen
 VAR
+	nPotentioMeter		AT		%I*		:INT;
+	
+	nPotPower			AT		%Q*		:INT := 32767; //Potentiometer voeden met 5V
+	nWaarde				AT		%Q*		:REAL;
+	nScaledMax			AT		%Q*		:INT;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[nScaledMax := 10;
+nWaarde := INT_TO_REAL(nPotentioMeter) * INT_TO_REAL(nScaledMax) / 32767;
+
+//Andere oplossing:
+//nScaledMax := 10;
+//nWaarde := INT_TO_REAL(nPotentioMeter) * nScaledMax) / 32767;]]></ST>
     </Implementation>
     <LineIds Name="prg_DynamischVerschalen">
       <LineId Id="5" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="16" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
