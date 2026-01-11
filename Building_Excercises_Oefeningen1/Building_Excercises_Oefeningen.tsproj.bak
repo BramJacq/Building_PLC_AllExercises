@@ -287,7 +287,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{D63DA16B-DEA3-4D8E-AB37-631E9FB30855}" Name="Oefeningen2" PrjFilePath="Oefeningen2\Oefeningen2.plcproj" TmcFilePath="Oefeningen2\Oefeningen2.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{F344B3C1-1397-CEC3-E5F3-94BCD58AC646}">
+				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{14EE2929-211C-1886-91A7-D8FAA772556B}">
 					<Name>Oefeningen2 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -318,12 +318,12 @@
 							<Type>INT</Type>
 						</Var>
 						<Var>
-							<Name>prg_DynamischVerschalen.nScaledMax</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
 							<Name>prg_DynamischVerschalen.nWaarde</Name>
 							<Type>REAL</Type>
+						</Var>
+						<Var>
+							<Name>prg_DynamischVerschalen.nScaledMax</Name>
+							<Type>INT</Type>
 						</Var>
 					</Vars>
 					<Contexts>
