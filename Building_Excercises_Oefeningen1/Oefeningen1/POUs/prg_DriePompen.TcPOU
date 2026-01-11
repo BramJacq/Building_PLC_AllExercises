@@ -3,13 +3,54 @@
   <POU Name="prg_DriePompen" Id="{54afbad6-5034-4df3-8f9f-7a6d22205edd}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM prg_DriePompen
 VAR
+	Hoofdschakelaar		AT		%I*		:BOOL;
+	Drukknop			AT		%I*		:BOOL;
+	StopKnop			AT		%I*		:BOOL;
+	
+	Pomp1				AT		%Q*		:BOOL;
+	Pomp2				AT		%Q*		:BOOL;
+	Pomp3				AT		%Q*		:BOOL;
+	DrukOpKnop: R_TRIG;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[IF Hoofdschakelaar AND NOT StopKnop THEN
+	DrukOpKnop(CLK:= Drukknop);
+ELSE	
+	Pomp1:=FALSE;
+	Pomp2:=FALSE;
+	Pomp3:=FALSE;
+END_IF
+IF DrukOpKnop.Q AND NOT Pomp1 AND NOT Pomp2 AND NOT Pomp3 THEN
+	Pomp1:=TRUE;
+ELSIF DrukOpKnop.Q AND Pomp1 AND NOT Pomp2 AND NOT Pomp3 THEN
+	Pomp1:=TRUE;
+	Pomp2:=TRUE;
+ELSIF DrukOpKnop.Q AND  Pomp1 AND Pomp2 AND NOT Pomp3 THEN
+	Pomp1:=TRUE;
+	Pomp2:=TRUE;
+	Pomp3:=TRUE;
+ELSIF DrukOpKnop.Q AND  Pomp1 AND Pomp2 AND Pomp3 THEN
+	Pomp1:=FALSE;
+	Pomp2:=FALSE;
+	Pomp3:=FALSE;
+END_IF]]></ST>
     </Implementation>
     <LineIds Name="prg_DriePompen">
       <LineId Id="5" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="51" Count="0" />
+      <LineId Id="48" Count="0" />
+      <LineId Id="16" Count="2" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="30" Count="2" />
+      <LineId Id="34" Count="2" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="46" Count="1" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="19" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

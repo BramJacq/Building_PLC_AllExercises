@@ -13,6 +13,7 @@ VAR
 	Pomp2					AT		%Q*		:BOOL;
 	PompWissel: BOOL;
 	PompAan: BOOL;
+	
 END_VAR
 ]]></Declaration>
     <Implementation>
