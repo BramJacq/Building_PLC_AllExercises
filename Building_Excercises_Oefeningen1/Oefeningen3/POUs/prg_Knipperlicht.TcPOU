@@ -3,13 +3,65 @@
   <POU Name="prg_Knipperlicht" Id="{61454f28-08ee-4c85-9cc4-a1747181c29c}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM prg_Knipperlicht
 VAR
+	bLamp				AT		%Q*		:BOOL;
+	TimerOn: TON;
+	TimerOff: TOF;
+	
+	//UitBreiding:
+	nPotentioMeter		AT		%I*		:INT;
+	Knipperfrequentie	:REAL;
+	bLamp1				AT		%Q*		:BOOL;
+	bLamp2				AT		%Q*		:BOOL;
+	SpanningPot			AT		%Q*		:REAL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[//TimerOn(IN:= NOT(bLamp), PT:= T#500MS);
+//TimerOff(IN:= TimerOn.Q, PT:= T#500MS, Q=> bLamp);
+
+//Uitbreiding:
+SpanningPot:= INT_TO_REAL(nPotentioMeter) * 10 / 32767;
+
+IF (SpanningPot < 2) THEN //Frequentie 0.5Hz = 1s aan, 1s Uit
+TimerOn(IN:= NOT(bLamp1), PT:= T#1S);
+TimerOff(IN:= TimerOn.Q, PT:= T#1S, Q=> bLamp1);
+bLamp2 := FALSE;
+	ELSIF (SpanningPot >= 2) &&  (SpanningPot < 4) THEN //1 Hz (500ms ON / 500ms OFF)
+	TimerOn(IN:= NOT(bLamp1), PT:= T#500MS);
+	TimerOff(IN:= TimerOn.Q, PT:= T#500MS, Q=> bLamp1);
+	bLamp2 := FALSE;
+		ELSIF (SpanningPot >= 4) &&  (SpanningPot < 6) THEN //2 Hz (250ms ON / 250ms OFF)
+		TimerOn(IN:= NOT(bLamp1), PT:= T#250MS);
+		TimerOff(IN:= TimerOn.Q, PT:= T#250MS, Q=> bLamp1);
+		bLamp2 := FALSE;
+			ELSIF (SpanningPot >= 6) THEN //5Hz => 1000ms / 5 = 200ms => 200ms / 2 = 100ms AAN, 100ms UIT
+			TimerOn(IN:= NOT(bLamp1), PT:= T#100MS);
+			TimerOff(IN:= TimerOn.Q, PT:= T#100MS, Q=> bLamp1);
+			bLamp2 := NOT(bLamp1);
+END_IF]]></ST>
     </Implementation>
     <LineIds Name="prg_Knipperlicht">
       <LineId Id="5" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="36" Count="1" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="46" Count="1" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="48" Count="0" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="51" Count="0" />
+      <LineId Id="23" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

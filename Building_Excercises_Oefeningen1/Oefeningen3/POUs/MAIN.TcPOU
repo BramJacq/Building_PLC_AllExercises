@@ -9,11 +9,12 @@ END_VAR
       <ST><![CDATA[prg_Teleruptor();
 prg_Startveiligheid();
 prg_TrappenhuisautomaatVerlenging();
-prg_TrappenhuisautomaatTijdsinstelling();]]></ST>
+prg_TrappenhuisautomaatTijdsinstelling();
+prg_Knipperlicht();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
-      <LineId Id="7" Count="2" />
+      <LineId Id="7" Count="3" />
     </LineIds>
   </POU>
 </TcPlcObject>
