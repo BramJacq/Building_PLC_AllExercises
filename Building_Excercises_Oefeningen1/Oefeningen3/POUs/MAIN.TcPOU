@@ -10,11 +10,12 @@ END_VAR
 prg_Startveiligheid();
 prg_TrappenhuisautomaatVerlenging();
 prg_TrappenhuisautomaatTijdsinstelling();
-prg_Knipperlicht();]]></ST>
+prg_Knipperlicht();
+prg_Millis();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
-      <LineId Id="7" Count="3" />
+      <LineId Id="7" Count="4" />
     </LineIds>
   </POU>
 </TcPlcObject>
