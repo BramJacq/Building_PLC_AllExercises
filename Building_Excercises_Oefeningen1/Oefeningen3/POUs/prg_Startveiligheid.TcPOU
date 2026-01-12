@@ -3,10 +3,14 @@
   <POU Name="prg_Startveiligheid" Id="{7fb4313d-8469-4bcf-a12c-766c3eece71d}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM prg_Startveiligheid
 VAR
+	bStart			AT		%I*		:BOOL;
+	
+	bMachine		AT		%Q*		:BOOL;
+	fbStart: TON;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[fbStart(IN:= bStart, PT:= T#5s, Q=> bMachine);]]></ST>
     </Implementation>
     <LineIds Name="prg_Startveiligheid">
       <LineId Id="5" Count="0" />

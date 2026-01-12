@@ -3,10 +3,14 @@
   <POU Name="prg_TrappenhuisautomaatVerlenging" Id="{d8cffbf9-f8ac-4eaf-9142-3cf7ed2e24a6}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM prg_TrappenhuisautomaatVerlenging
 VAR
+	bDrukknop1, bDrukknop2, bDrukknop3, bDrukknop4, bDrukknop5, bDrukknop6	AT	%I*	:BOOL;
+	
+	bVerlichting		AT		%Q*		:BOOL;
+	fbVerlichting: TOF;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[fbVerlichting(IN:= bDrukknop1 OR bDrukknop2 OR bDrukknop3 OR bDrukknop4 OR bDrukknop5 OR bDrukknop6, PT:= T#3s, Q=> bVerlichting);]]></ST>
     </Implementation>
     <LineIds Name="prg_TrappenhuisautomaatVerlenging">
       <LineId Id="5" Count="0" />
