@@ -3,13 +3,21 @@
   <POU Name="prg_Millis" Id="{dd5a5dd1-f5f8-4920-a311-12fff34722f3}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM prg_Millis
 VAR
+	tpMillis : TP;
+	bPuls	AT		%Q*		:BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[tpMillis(IN := NOT tpMillis.Q, PT := T#1S);
+bPuls := NOT(tpMillis.Q);
+
+//Als je dit in 1 regel wilt moet je gewoon bPuls bij de Q van tpmillis zetten]]></ST>
     </Implementation>
     <LineIds Name="prg_Millis">
+      <LineId Id="8" Count="0" />
       <LineId Id="5" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="13" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
