@@ -14,12 +14,13 @@ END_VAR
 //prg_Millis();
 //prg_OpenbaarToilet();
 prg_AutomatischeDeur();
-prg_Setpointsturing();]]></ST>
+prg_Setpointsturing();
+prg_DraaiRichtingMotor();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
       <LineId Id="7" Count="5" />
-      <LineId Id="16" Count="1" />
+      <LineId Id="16" Count="2" />
     </LineIds>
   </POU>
 </TcPlcObject>

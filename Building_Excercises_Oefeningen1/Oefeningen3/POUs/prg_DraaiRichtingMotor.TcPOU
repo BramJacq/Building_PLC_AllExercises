@@ -3,13 +3,40 @@
   <POU Name="prg_DraaiRichtingMotor" Id="{52597bfd-aa8a-4647-945c-0d4f5bed4876}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM prg_DraaiRichtingMotor
 VAR
+	bSensorA	AT		%I*		:BOOL;
+	bSensorB	AT		%I*		:BOOL;
+	
+	bLinks		AT		%Q*		:BOOL;
+	bRechts		AT		%Q*		:BOOL;
+	bMotor		AT		%Q*		:BOOL;
+	bAlarm		AT		%Q*		:BOOL;
+	Links: R_TRIG;
+	Rechts: R_TRIG;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[Links(CLK:= bSensorA, Q=> bLinks);
+Rechts(CLK:= bSensorB, Q=> bRechts);
+
+IF bLinks THEN
+	bMotor:=TRUE;
+	bAlarm:=FALSE;
+ELSIF bRechts THEN
+	bMotor:=FALSE;
+	bAlarm:=TRUE;
+END_IF]]></ST>
     </Implementation>
     <LineIds Name="prg_DraaiRichtingMotor">
       <LineId Id="5" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="22" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
