@@ -405,7 +405,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{9BAFB355-614E-4004-B15C-52F6EFCBCC7B}" Name="Oefeningen3" PrjFilePath="Oefeningen3\Oefeningen3.plcproj" TmcFilePath="Oefeningen3\Oefeningen3.tmc" ReloadTmc="true" AmsPort="853" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{9E2CFC2F-81C9-6C73-B578-DB93C4D702E4}">
+				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{E5DB04CE-6231-C1C8-9828-E6BEAE742E12}">
 					<Name>Oefeningen3 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -491,6 +491,10 @@
 						</Var>
 						<Var>
 							<Name>prg_TrappenhuisautomaatTijdsinstelling.bVerlichting</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_Knipperlicht.bLamp</Name>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>

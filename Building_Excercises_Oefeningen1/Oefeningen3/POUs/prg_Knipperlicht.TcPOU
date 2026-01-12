@@ -26,11 +26,11 @@ IF (SpanningPot < 2) THEN //Frequentie 0.5Hz = 1s aan, 1s Uit
 TimerOn(IN:= NOT(bLamp1), PT:= T#1S);
 TimerOff(IN:= TimerOn.Q, PT:= T#1S, Q=> bLamp1);
 bLamp2 := FALSE;
-	ELSIF (SpanningPot >= 2) &&  (SpanningPot < 4) THEN //1 Hz (500ms ON / 500ms OFF)
+	ELSIF (SpanningPot >= 2) AND (SpanningPot < 4) THEN //1 Hz (500ms ON / 500ms OFF)
 	TimerOn(IN:= NOT(bLamp1), PT:= T#500MS);
 	TimerOff(IN:= TimerOn.Q, PT:= T#500MS, Q=> bLamp1);
 	bLamp2 := FALSE;
-		ELSIF (SpanningPot >= 4) &&  (SpanningPot < 6) THEN //2 Hz (250ms ON / 250ms OFF)
+		ELSIF (SpanningPot >= 4) AND (SpanningPot < 6) THEN //2 Hz (250ms ON / 250ms OFF)
 		TimerOn(IN:= NOT(bLamp1), PT:= T#250MS);
 		TimerOff(IN:= TimerOn.Q, PT:= T#250MS, Q=> bLamp1);
 		bLamp2 := FALSE;
