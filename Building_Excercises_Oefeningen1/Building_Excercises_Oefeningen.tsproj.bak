@@ -405,7 +405,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{9BAFB355-614E-4004-B15C-52F6EFCBCC7B}" Name="Oefeningen3" PrjFilePath="Oefeningen3\Oefeningen3.plcproj" TmcFilePath="Oefeningen3\Oefeningen3.tmc" ReloadTmc="true" AmsPort="853" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{08EA7591-AD7E-CCC8-B42A-F456BD450D58}">
+				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{F81159CE-0AA2-06FB-EC83-55EE4DE001D4}">
 					<Name>Oefeningen3 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -426,15 +426,43 @@
 							<Name>prg_Startveiligheid.bStart</Name>
 							<Type>BOOL</Type>
 						</Var>
+						<Var>
+							<Name>prg_TrappenhuisautomaatVerlenging.bDrukknop1</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_TrappenhuisautomaatVerlenging.bDrukknop2</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_TrappenhuisautomaatVerlenging.bDrukknop3</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_TrappenhuisautomaatVerlenging.bDrukknop4</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_TrappenhuisautomaatVerlenging.bDrukknop5</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_TrappenhuisautomaatVerlenging.bDrukknop6</Name>
+							<Type>BOOL</Type>
+						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
+						<Var>
+							<Name>prg_Startveiligheid.bMachine</Name>
+							<Type>BOOL</Type>
+						</Var>
 						<Var>
 							<Name>prg_Teleruptor.bKeuken</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>prg_Startveiligheid.bMachine</Name>
+							<Name>prg_TrappenhuisautomaatVerlenging.bVerlichting</Name>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>

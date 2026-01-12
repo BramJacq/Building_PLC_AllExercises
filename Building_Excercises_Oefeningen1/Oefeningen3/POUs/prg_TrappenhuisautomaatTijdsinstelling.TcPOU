@@ -3,13 +3,34 @@
   <POU Name="prg_TrappenhuisautomaatTijdsinstelling" Id="{fec349af-33a3-4bce-b25c-3eeceaf35561}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM prg_TrappenhuisautomaatTijdsinstelling
 VAR
+	bDrukknop1, bDrukknop2, bDrukknop3, bDrukknop4, bDrukknop5, bDrukknop6	AT	%I*	:BOOL;
+	
+	bVerlichting		AT		%Q*		:BOOL;
+
+	fbVerlichting: TOF;
+	RisingEdge: R_TRIG;
+	bAanUit: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[RisingEdge(CLK:= bDrukknop1 OR bDrukknop2 OR bDrukknop3 OR bDrukknop4 OR bDrukknop5 OR bDrukknop6, Q=> bAanUit);
+
+IF bAanUit AND bVerlichting THEN
+	bVerlichting:=0;
+ELSIF bAanUit AND NOT(bVerlichting) THEN
+	fbVerlichting(IN:= bAanUit, PT:= T#3S, Q=> bVerlichting);
+END_IF
+]]></ST>
     </Implementation>
     <LineIds Name="prg_TrappenhuisautomaatTijdsinstelling">
+      <LineId Id="10" Count="0" />
+      <LineId Id="24" Count="0" />
       <LineId Id="5" Count="0" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="17" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
