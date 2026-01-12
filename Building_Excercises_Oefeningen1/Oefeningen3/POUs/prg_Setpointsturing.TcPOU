@@ -3,13 +3,61 @@
   <POU Name="prg_Setpointsturing" Id="{6a0f88b7-fb46-465c-8ecf-3f86cad7e03d}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM prg_Setpointsturing
 VAR
+	DrukPlus, DrukMin		AT		%I*		:BOOL;
+	SetPoint		:INT:=0;
+	LangerAls1sec: TON;
+	LANGEPLUS: TON;
+	LANGEMIN: TON;
+	SetpointWaarde: REAL;
+	KorteDrukPlus: F_TRIG;
+	KorteDrukMin: F_TRIG;
+	SpanningUit		AT			%Q*			:REAL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[LANGEPLUS(IN:= DrukPlus, PT:= T#1S);
+LANGEMIN(IN:= DrukMin, PT:= T#1S);
+
+SetpointWaarde := INT_TO_REAL (SetPoint) * 1000	/32767;
+
+IF LANGEPLUS.Q THEN
+	SetpointWaarde:= SetpointWaarde + 100;
+ELSIF LANGEMIN.Q THEN
+	SetpointWaarde:= SetpointWaarde - 100;
+END_IF
+
+KorteDrukPlus(CLK:= DrukPlus);
+KorteDrukMin(CLK:= DrukMin);
+
+IF KorteDrukPlus.Q AND NOT LANGEPLUS.Q THEN
+	SetpointWaarde:= SetpointWaarde + 1;
+ELSIF KorteDrukMin.Q AND NOT LANGEMIN.Q THEN
+	SetpointWaarde:= SetpointWaarde - 1;
+END_IF
+
+SpanningUit:= SetpointWaarde / 100;]]></ST>
     </Implementation>
     <LineIds Name="prg_Setpointsturing">
-      <LineId Id="5" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="37" Count="0" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="40" Count="1" />
+      <LineId Id="39" Count="0" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="42" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
