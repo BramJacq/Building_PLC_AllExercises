@@ -16,263 +16,9 @@
 		</System>
 		<Plc>
 			<Project GUID="{87B26E1A-F1D7-47E9-8B34-A57AAE9303D4}" Name="Oefeningen1" PrjFilePath="Oefeningen1\Oefeningen1.plcproj" TmcFilePath="Oefeningen1\Oefeningen1.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{D359929A-D9E8-878D-A3A2-109AF8EAE7E9}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Oefeningen1\Oefeningen1.tmc" TmcHash="{CB3F8646-F85F-1C94-6560-E28D088EDE3D}">
 					<Name>Oefeningen1 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
-					<Vars VarGrpType="1">
-						<Name>PlcTask Inputs</Name>
-						<Var>
-							<Name>prg_jafunctie.Ingang</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TweeSignalen.S01</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TweeSignalen.S02</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Reactorvat.S01</Name>
-							<Comment><![CDATA[NiveauTeHoog]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Reactorvat.S02</Name>
-							<Comment><![CDATA[TemperatuurTeHoog]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Reactorvat.S03</Name>
-							<Comment><![CDATA[DrukTeHoog]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Reactorvat.S04</Name>
-							<Comment><![CDATA[StopKnop Normaal Gesloten]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Reactorvat.S05</Name>
-							<Comment><![CDATA[HoofdSchakelaar]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Opslagvat.SensorHoog</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Opslagvat.SensorLaag</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Opslagvat.StartKnop</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Opslagvat.StopKnop</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>PRG_OpslagFoutDetectie.SensorHoog</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>PRG_OpslagFoutDetectie.SensorLaag</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>PRG_OpslagFoutDetectie.StartKnop</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>PRG_OpslagFoutDetectie.StopKnop</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Alarmbewaking.Sensor1</Name>
-							<Comment><![CDATA[Druk Te Hoog (True)]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Alarmbewaking.Sensor2</Name>
-							<Comment><![CDATA[Temperatuur Te Hoog (True)]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Alarmbewaking.Sensor3</Name>
-							<Comment><![CDATA[Laag vloeistof (True) In de oefening moet dit false zijn maar dit is gewoon verwarrend maak er dan NOT(..) van waar deze voorkomt in het programma]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Alarmbewaking.DrukKnop</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Teleruptorschakeling.Drukknop1</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Teleruptorschakeling.Drukknop2</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Teleruptorschakeling.Drukknop3</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_MotorMetDrukknop.Drukknop</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_MotorMetDrukknop.Hoofdschakelaar</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TweePompen.Hoofdschakelaar</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TweePompen.StartKnop</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TweePompen.StopKnop</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TweePompen.NiveauSchakelaarOnder</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TweePompen.NiveauSchakelaarBoven</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_DriePompen.Hoofdschakelaar</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_DriePompen.Drukknop</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_DriePompen.StopKnop</Name>
-							<Type>BOOL</Type>
-						</Var>
-					</Vars>
-					<Vars VarGrpType="2" AreaNo="1">
-						<Name>PlcTask Outputs</Name>
-						<Var>
-							<Name>prg_jafunctie.Uitgang</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TweeSignalen.Q01</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TweeSignalen.Q02</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Reactorvat.Q01</Name>
-							<Comment><![CDATA[OranjeLamp (bij detectie 1 sensor)]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Reactorvat.Q02</Name>
-							<Comment><![CDATA[RodeLamp (bij detectie 2 sensor)]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Reactorvat.Q05</Name>
-							<Comment><![CDATA[AlarmBel (bij detectie 3 sensor)]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Opslagvat.Klep</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Opslagvat.Pomp</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Opslagvat.Vullen</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>PRG_OpslagFoutDetectie.Klep</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>PRG_OpslagFoutDetectie.Pomp</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>PRG_OpslagFoutDetectie.Vullen</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Alarmbewaking.Lamp1</Name>
-							<Comment><![CDATA[Druk Te Hoog]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Alarmbewaking.Lamp2</Name>
-							<Comment><![CDATA[Temperatuur Te Hoog]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Alarmbewaking.Lamp3</Name>
-							<Comment><![CDATA[Vloeistof Te Laag]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Alarmbewaking.Lamp4</Name>
-							<Comment><![CDATA[TweeAlarmen]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Alarmbewaking.Lamp5</Name>
-							<Comment><![CDATA[Drie Alarmen]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Teleruptorschakeling.Verlichting</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_MotorMetDrukknop.MotorLinks</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_MotorMetDrukknop.MotorRechts</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TweePompen.Pomp1</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TweePompen.Pomp2</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_DriePompen.Pomp1</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_DriePompen.Pomp2</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_DriePompen.Pomp3</Name>
-							<Type>BOOL</Type>
-						</Var>
-					</Vars>
 					<Contexts>
 						<Context>
 							<Id>0</Id>
@@ -290,57 +36,18 @@
 				</Instance>
 			</Project>
 			<Project GUID="{D63DA16B-DEA3-4D8E-AB37-631E9FB30855}" Name="Oefeningen2" PrjFilePath="Oefeningen2\Oefeningen2.plcproj" TmcFilePath="Oefeningen2\Oefeningen2.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{A6C95DDA-3ADB-61E0-280E-1505247436F1}">
+				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Oefeningen2\Oefeningen2.tmc" TmcHash="{12AF1809-7081-EFC8-5D31-C713E9DA305E}">
 					<Name>Oefeningen2 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
-							<Name>prg_PotentioMeter.nPotentioMeter</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
 							<Name>prg_DynamischVerschalen.nPotentioMeter</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>prg_TolerantiesEnHysteresis.nTemperatuurGevraagd</Name>
-							<Comment><![CDATA[ via visualisatie (180–230)]]></Comment>
-							<Type>REAL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TolerantiesEnHysteresis.nTemperatuurMeting</Name>
-							<Comment><![CDATA[ potentiometer]]></Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>prg_VerschalenDisplay.nPotentioMeter</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>prg_Processbewaking3Vaten.nVatWaarde1</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>prg_Processbewaking3Vaten.nVatWaarde2</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>prg_Processbewaking3Vaten.nVatWaarde3</Name>
 							<Type>INT</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
-						<Var>
-							<Name>prg_PotentioMeter.nPotPower</Name>
-							<Comment><![CDATA[Potentiometer voeden met 5V]]></Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>prg_PotentioMeter.nWaarde</Name>
-							<Type>REAL</Type>
-						</Var>
 						<Var>
 							<Name>prg_DynamischVerschalen.nPotPower</Name>
 							<Comment><![CDATA[Potentiometer voeden met 5V]]></Comment>
@@ -352,39 +59,6 @@
 						</Var>
 						<Var>
 							<Name>prg_DynamischVerschalen.nScaledMax</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>prg_TolerantiesEnHysteresis.GroeneLed</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TolerantiesEnHysteresis.nPotPower</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>prg_TolerantiesEnHysteresis.RodeLed</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_VerschalenDisplay.nPotPower</Name>
-							<Comment><![CDATA[Potentiometer voeden met 5V]]></Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>prg_VerschalenDisplay.nWaarde</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>prg_Processbewaking3Vaten.nVat1</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>prg_Processbewaking3Vaten.nVat2</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>prg_Processbewaking3Vaten.nVat3</Name>
 							<Type>INT</Type>
 						</Var>
 					</Vars>
@@ -405,118 +79,41 @@
 				</Instance>
 			</Project>
 			<Project GUID="{9BAFB355-614E-4004-B15C-52F6EFCBCC7B}" Name="Oefeningen3" PrjFilePath="Oefeningen3\Oefeningen3.plcproj" TmcFilePath="Oefeningen3\Oefeningen3.tmc" ReloadTmc="true" AmsPort="853" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{B8424A94-C8B2-FFFB-46D4-C0583123F3AD}">
+				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Oefeningen3\Oefeningen3.tmc" TmcHash="{166C7105-C774-C4EF-7487-F4969220CCDD}">
 					<Name>Oefeningen3 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
-							<Name>prg_Teleruptor.bDruk1Keuken</Name>
+							<Name>prg_OpenbaarToilet.bSchakel1</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>prg_Teleruptor.bDruk2Living</Name>
+							<Name>prg_OpenbaarToilet.bSchakel2</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>prg_Teleruptor.bDruk3Gang</Name>
+							<Name>prg_OpenbaarToilet.bSchakel3</Name>
 							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Startveiligheid.bStart</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TrappenhuisautomaatVerlenging.bDrukknop1</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TrappenhuisautomaatVerlenging.bDrukknop2</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TrappenhuisautomaatVerlenging.bDrukknop3</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TrappenhuisautomaatVerlenging.bDrukknop4</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TrappenhuisautomaatVerlenging.bDrukknop5</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TrappenhuisautomaatVerlenging.bDrukknop6</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TrappenhuisautomaatTijdsinstelling.bDrukknop1</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TrappenhuisautomaatTijdsinstelling.bDrukknop2</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TrappenhuisautomaatTijdsinstelling.bDrukknop3</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TrappenhuisautomaatTijdsinstelling.bDrukknop4</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TrappenhuisautomaatTijdsinstelling.bDrukknop5</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TrappenhuisautomaatTijdsinstelling.bDrukknop6</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Knipperlicht.nPotentioMeter</Name>
-							<Comment><![CDATA[UitBreiding:]]></Comment>
-							<Type>INT</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
 						<Var>
-							<Name>prg_Teleruptor.bKeuken</Name>
+							<Name>prg_OpenbaarToilet.bLamp1</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>prg_Startveiligheid.bMachine</Name>
+							<Name>prg_OpenbaarToilet.bLamp2</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>prg_TrappenhuisautomaatVerlenging.bVerlichting</Name>
+							<Name>prg_OpenbaarToilet.bLamp3</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>prg_TrappenhuisautomaatTijdsinstelling.bVerlichting</Name>
+							<Name>prg_OpenbaarToilet.bVentilator</Name>
 							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Knipperlicht.bLamp</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Knipperlicht.bLamp1</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Knipperlicht.bLamp2</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Millis.bPuls</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Knipperlicht.SpanningPot</Name>
-							<Type>REAL</Type>
 						</Var>
 					</Vars>
 					<Contexts>

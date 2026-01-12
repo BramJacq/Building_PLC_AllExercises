@@ -3,13 +3,23 @@
   <POU Name="prg_OpenbaarToilet" Id="{764dfd20-4378-4478-a84a-d1d1d7df3ab5}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM prg_OpenbaarToilet
 VAR
+	bSchakel1, bSchakel2, bSchakel3		AT		%I*		:BOOL;
+	bLamp1, bLamp2, bLamp3				AT		%Q*		:BOOL;
+	bVentilator							AT		%Q*		:BOOL;
+	TimerOff: TOF;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[bLamp1:= bSchakel1;
+bLamp2:= bSchakel2;
+bLamp3:= bSchakel3;
+TimerOff(IN:= bSchakel1 OR bSchakel2 OR bSchakel3, PT:= T#5S, Q=> bVentilator);
+//Dit werkt omdat de TOF op de FALLING EDGE detecteerd]]></ST>
     </Implementation>
     <LineIds Name="prg_OpenbaarToilet">
       <LineId Id="5" Count="0" />
+      <LineId Id="13" Count="1" />
+      <LineId Id="27" Count="1" />
     </LineIds>
   </POU>
 </TcPlcObject>

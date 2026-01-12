@@ -6,16 +6,17 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[prg_Teleruptor();
-prg_Startveiligheid();
-prg_TrappenhuisautomaatVerlenging();
-prg_TrappenhuisautomaatTijdsinstelling();
-prg_Knipperlicht();
-prg_Millis();]]></ST>
+      <ST><![CDATA[//prg_Teleruptor();
+//prg_Startveiligheid();
+//prg_TrappenhuisautomaatVerlenging();
+//prg_TrappenhuisautomaatTijdsinstelling();
+//prg_Knipperlicht();
+//prg_Millis();
+prg_OpenbaarToilet();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
-      <LineId Id="7" Count="4" />
+      <LineId Id="7" Count="5" />
     </LineIds>
   </POU>
 </TcPlcObject>
