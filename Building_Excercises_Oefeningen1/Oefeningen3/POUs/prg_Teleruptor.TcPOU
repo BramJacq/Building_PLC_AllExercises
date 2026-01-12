@@ -3,10 +3,14 @@
   <POU Name="prg_Teleruptor" Id="{81aa6041-588d-4d22-ae97-814c8e821228}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM prg_Teleruptor
 VAR
+	bDruk1Keuken, bDruk2Living, bDruk3Gang		AT		%I*		:BOOL;
+	
+	bKeuken		AT		%Q*		:BOOL;
+	fbKeuken: TP;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[fbKeuken(IN:= bDruk1Keuken OR bDruk2Living OR bDruk3Gang, PT:= T#60ms, Q=> bKeuken);]]></ST>
     </Implementation>
     <LineIds Name="prg_Teleruptor">
       <LineId Id="5" Count="0" />
