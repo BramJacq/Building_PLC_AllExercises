@@ -79,40 +79,28 @@
 				</Instance>
 			</Project>
 			<Project GUID="{9BAFB355-614E-4004-B15C-52F6EFCBCC7B}" Name="Oefeningen3" PrjFilePath="Oefeningen3\Oefeningen3.plcproj" TmcFilePath="Oefeningen3\Oefeningen3.tmc" ReloadTmc="true" AmsPort="853" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Oefeningen3\Oefeningen3.tmc" TmcHash="{166C7105-C774-C4EF-7487-F4969220CCDD}">
+				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Oefeningen3\Oefeningen3.tmc" TmcHash="{EC457223-1D7A-DE5F-690C-6A755D73E1B6}">
 					<Name>Oefeningen3 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
-							<Name>prg_OpenbaarToilet.bSchakel1</Name>
+							<Name>prg_AutomatischeDeur.bHoofdSchakelaar</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>prg_OpenbaarToilet.bSchakel2</Name>
+							<Name>prg_AutomatischeDeur.bDrukknop</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>prg_OpenbaarToilet.bSchakel3</Name>
+							<Name>prg_AutomatischeDeur.bSensor</Name>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
 						<Var>
-							<Name>prg_OpenbaarToilet.bLamp1</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_OpenbaarToilet.bLamp2</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_OpenbaarToilet.bLamp3</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_OpenbaarToilet.bVentilator</Name>
+							<Name>prg_AutomatischeDeur.bDeur</Name>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>

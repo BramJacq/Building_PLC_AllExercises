@@ -3,10 +3,16 @@
   <POU Name="prg_AutomatischeDeur" Id="{e8dcdb5a-fded-4c90-a061-70c9e66c14c6}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM prg_AutomatischeDeur
 VAR
+	bHoofdSchakelaar		AT		%I*			:BOOL;
+	bDrukknop				AT		%I*			:BOOL;
+	bSensor					AT		%I*			:BOOL;
+	
+	bDeur					AT		%Q*			:BOOL;
+	DeurDicht: TOF;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[DeurDicht(IN:= bHoofdSchakelaar AND (bDrukknop OR bSensor), PT:= T#1S, Q=> bDeur);]]></ST>
     </Implementation>
     <LineIds Name="prg_AutomatischeDeur">
       <LineId Id="5" Count="0" />

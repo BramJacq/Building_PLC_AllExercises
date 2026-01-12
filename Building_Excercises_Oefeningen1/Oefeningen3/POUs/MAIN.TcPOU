@@ -12,11 +12,13 @@ END_VAR
 //prg_TrappenhuisautomaatTijdsinstelling();
 //prg_Knipperlicht();
 //prg_Millis();
-prg_OpenbaarToilet();]]></ST>
+//prg_OpenbaarToilet();
+prg_AutomatischeDeur();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
       <LineId Id="7" Count="5" />
+      <LineId Id="16" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
