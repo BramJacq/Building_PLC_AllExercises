@@ -345,3 +345,63 @@ Bij het buiten rijden krijgen we de omgekeerde beweging. De wagen onderbreekt ee
 In onderstaand voorbeeld komen de producten vanaf de linkerzijde. Op deze aanvoerband bevindt zich een sensor die de producten detecteert. In het midden bevindt zich een klep die twee standen kan aannemen zodat de producten rechtdoor gaan of afgebogen worden op een tweede transportband. Er dienen 10 producten rechtdoor te gaan en vervolgens worden 20 producten afgebogen waarna er terug 10 rechtdoor gaan, enz.
 
 ---
+
+## 📁 Oefeningen 4 — POUs  
+📂 Map:  
+[`Building_Excercises_Oefeningen1/Oefeningen4/POUs`](./Building_Excercises_Oefeningen1/Oefeningen4/POUs)
+
+| Oefening | Programma (.TcPOU) |
+|--------|------------------|
+| Main | [`MAIN.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen4/POUs/MAIN.TcPOU) |
+| Kantoorverlichting | [`prg_KantoorVerlichting.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen4/POUs/prg_KantoorVerlichting.TcPOU) |
+| Thermostaatregeling | [`prg_Thermostaatregeling.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen4/POUs/prg_Thermostaatregeling.TcPOU) |
+| Thermostaatregeling tijdsturing | [`prg_ThermostaatregelingTijdsturing.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen4/POUs/prg_ThermostaatregelingTijdsturing.TcPOU) |
+| Finale | [`prg_Finale.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen4/POUs/prg_Finale.TcPOU) |
+
+---
+
+## 📝 Oefeningen 4 — Opgaves
+
+---
+
+### 1. Kantoorverlichting
+Wanneer de eerste persoon op kantoor aankomt, kan deze via schakelaar_1 de verlichting inschakelen (alsook nadien uitschakelen). Na een bepaalde instelbare tijd zullen de lichten 3x knipperen om aan te geven dat deze over 30seconden zullen uitschakelen. Men kan het automatisch uitschakelen van de verlichting stoppen (opnieuw verlengen met de ingestelde tijd) door schakelaar_1 lang in te drukken (2 seconden).
+
+Om de ingestelde tijd te kunnen bepalen wordt schakelaar_2 gebruikt om deze in waarde te doen verhogen en via schakelaar_3 te verlagen.
+
+TIP: Maak gebruik van FB_Light en CTUD functie blokken.
+
+---
+
+### 2. Thermostaatregeling
+Met de kamerthermostaat wordt de temperatuur in de huiskamer geregeld. Is de temperatuur lager dan de ingestelde waarde -1°C dan schakelt de verwarming in en als deze hoger is dan de ingestelde waarde +1°C dan schakelt de verwarming uit.
+
+Potentiometer 1 bepaald de ingestelde temperatuur van 10°C tot 30°C (verschaalt).  
+Potentiometer 2 bepaald de huidige temperatuur van -30°C tot 40°C (verschaalt).  
+
+Geef de temperaturen weer via een Bar Display.  
+Een LAMP geeft aan wanneer de verwarming ingeschakeld is.
+
+Deze thermostaatregeling mag enkel gebeuren tijdens een bepaalde tijdsperiode, met een begin- en eindtijdstip voor iedere dag van de week. Gebruik hiervoor de FB_WeeklyTimeSwitch uit de TcBABasic.lib en bekijk de structure TIMESTRUCT nader voor de implementatie.
+
+---
+
+### 3. Thermostaatregeling met tijdsturing en logging
+Zorg dat de temperatuur van de laatste 20seconden met een sample rate van één seconde weergegeven wordt in de visualisatie. Dit gebeurt via een Table en een alarm kleur indien deze lager is dan 10°C.
+
+---
+
+### 4. Finale versie met alle toeters en bellen
+Maak een nieuw project aan met de naam “Building automation” en verwijder de mappen Global Variables, POUs en Visualizations. Maak de mappen gelijkvloers, verdiep en woning aan.
+
+Onder de map gelijkvloers, voeg je nu een program POU (PRG) toe in de taal ST en naam ‘Gelijkvloers’, alsook een visualisation met de naam VISU_GVL. Maak in de visualisatie je woning na, waarbij een klik op een kamer de lichten doet togglen. In iedere kamer wil ik ook de temperatuur kunnen zien. Het zichtbaar maken van deze waarden moeten getoggled kunnen worden doormiddel van een button in de hoek langs het grondplan.
+
+Probeer dit te vervolledigen voor de rest van de woning waarbij onder de map woning je een totaalzicht hebt met de buitenverlichting en status van de woning bv. Ergens staan de lichten nog aan of de chauffage staat nog aan.
+
+Voor de verwarming zal de temperatuur van iedere kamer iedere 10 seconden gemeten worden.
+
+Maak een Moving Average (MA) filter van 10 waardes voor de temperatuur.  
+Sla de MA waarden voorafgegaan van een timestamp in een 2D array op. Toon hiervan de laatste 20 MA gelogde waarden in de visualisatie m.b.v. de tabel component.  
+Zorg ervoor dat alle MA ook in een CSV file opgeslagen worden.
+
+---
