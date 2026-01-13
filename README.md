@@ -403,4 +403,5 @@ Voor de verwarming zal de temperatuur van iedere kamer iedere 10 seconden gemete
 Maak een Moving Average (MA) filter van 10 waardes voor de temperatuur.  
 Sla de MA waarden voorafgegaan van een timestamp in een 2D array op. Toon hiervan de laatste 20 MA gelogde waarden in de visualisatie m.b.v. de tabel component.  
 Zorg ervoor dat alle MA ook in een CSV file opgeslagen worden.
+
 ---
