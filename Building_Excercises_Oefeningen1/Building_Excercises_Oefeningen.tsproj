@@ -82,7 +82,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{9BAFB355-614E-4004-B15C-52F6EFCBCC7B}" Name="Oefeningen3" PrjFilePath="Oefeningen3\Oefeningen3.plcproj" TmcFilePath="Oefeningen3\Oefeningen3.tmc" ReloadTmc="true" AmsPort="853" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Oefeningen3\Oefeningen3.tmc" TmcHash="{D5DDB0EF-2344-FA3A-784B-2071CB50A259}">
+				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Oefeningen3\Oefeningen3.tmc" TmcHash="{C52519C0-8002-A58E-415A-6461A8CC973A}">
 					<Name>Oefeningen3 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -124,15 +124,15 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
+							<Name>prg_ProductenTellen.bSensor</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
 							<Name>prg_Parking.Sensor1</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>prg_Parking.Sensor2</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_ProductenTellen.bSensor</Name>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>
@@ -143,19 +143,7 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>prg_Setpointsturing.SpanningUit</Name>
-							<Type>REAL</Type>
-						</Var>
-						<Var>
 							<Name>prg_DraaiRichtingMotor.bLinks</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_DraaiRichtingMotor.bAlarm</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Belsignaal.Bel</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -164,6 +152,18 @@
 						</Var>
 						<Var>
 							<Name>prg_DraaiRichtingMotor.bMotor</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_DraaiRichtingMotor.bAlarm</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_Setpointsturing.SpanningUit</Name>
+							<Type>REAL</Type>
+						</Var>
+						<Var>
+							<Name>prg_Belsignaal.Bel</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -184,7 +184,7 @@
 						</Var>
 						<Var>
 							<Name>prg_ProductenTellen.bKlep</Name>
-							<Comment><![CDATA[0 is rechtdoor, 2 is afgebogen]]></Comment>
+							<Comment><![CDATA[0 is rechtdoor, 1 is afgebogen]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>

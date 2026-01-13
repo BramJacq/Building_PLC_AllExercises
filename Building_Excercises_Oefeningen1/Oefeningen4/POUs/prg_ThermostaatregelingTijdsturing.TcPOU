@@ -3,6 +3,7 @@
   <POU Name="prg_ThermostaatregelingTijdsturing" Id="{2d87b2cd-fdc6-4437-aac8-4dcd339217b6}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM prg_ThermostaatregelingTijdsturing
 VAR
+	
 END_VAR
 ]]></Declaration>
     <Implementation>

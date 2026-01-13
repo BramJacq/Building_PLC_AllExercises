@@ -3,13 +3,72 @@
   <POU Name="prg_KantoorVerlichting" Id="{b31bbaab-da33-444b-860c-e46c7b080048}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM prg_KantoorVerlichting
 VAR
+	bSchakelaar_1		AT		%I*		:BOOL;
+	bSchakelaar_2		AT		%I*		:BOOL;
+	bSchakelaar_3		AT		%I*		:BOOL;
+	bVerlichting	 	AT 		%Q* 	:BOOL;
+
+	LichtVerlengen: TON;
+	TimerVerlichting: TP;
+	Flikkeraan: TON;
+	FlikkerUit: TOF;
+	Flikker: REAL;
+	Uitklik: F_TRIG;
+	bVerlichtingRaw: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[LichtVerlengen(IN:= bSchakelaar_1, PT:= T#2S);
+TimerVerlichting(IN:= bSchakelaar_1 OR LichtVerlengen.Q, PT:= T#60S, Q=> bVerlichting);
+
+IF TIME_TO_REAL(TimerVerlichting.ET) >= 30 AND Flikker < 3 THEN
+	Flikkeraan(IN:= NOT(FlikkerUit.Q) , PT:= T#500MS, Q=> bVerlichting);
+	FlikkerUit(IN:= Flikkeraan.Q, PT:= T#500MS);
+	Flikker := Flikker+1;
+END_IF
+
+IF FlikkerUit.Q THEN
+	bVerlichting:=NOT(TimerVerlichting.Q);
+ELSE
+	bVerlichting:=TimerVerlichting.Q;
+END_IF
+
+Uitklik(CLK:= bSchakelaar_1);
+
+IF TIME_TO_REAL(TimerVerlichting.ET) >= 30 AND LichtVerlengen.Q THEN
+	TimerVerlichting.IN:=TRUE;
+ELSIF bVerlichting AND Uitklik.Q AND NOT(LichtVerlengen.Q) THEN
+	bVerlichting:=FALSE;
+	TimerVerlichting.IN:=FALSE;
+END_IF
+
+]]></ST>
     </Implementation>
     <LineIds Name="prg_KantoorVerlichting">
-      <LineId Id="5" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="71" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="37" Count="0" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="43" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="81" Count="0" />
+      <LineId Id="80" Count="0" />
+      <LineId Id="84" Count="0" />
+      <LineId Id="82" Count="0" />
+      <LineId Id="85" Count="0" />
+      <LineId Id="83" Count="0" />
+      <LineId Id="59" Count="1" />
+      <LineId Id="51" Count="0" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="56" Count="0" />
+      <LineId Id="58" Count="0" />
+      <LineId Id="62" Count="0" />
+      <LineId Id="53" Count="0" />
+      <LineId Id="70" Count="0" />
+      <LineId Id="12" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
