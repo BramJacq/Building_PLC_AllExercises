@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="prg_KantoorVerlichting" Id="{b31bbaab-da33-444b-860c-e46c7b080048}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM prg_KantoorVerlichting
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <LineIds Name="prg_KantoorVerlichting">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

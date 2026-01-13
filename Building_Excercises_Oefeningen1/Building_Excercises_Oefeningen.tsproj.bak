@@ -79,7 +79,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{9BAFB355-614E-4004-B15C-52F6EFCBCC7B}" Name="Oefeningen3" PrjFilePath="Oefeningen3\Oefeningen3.plcproj" TmcFilePath="Oefeningen3\Oefeningen3.tmc" ReloadTmc="true" AmsPort="853" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Oefeningen3\Oefeningen3.tmc" TmcHash="{6B25297F-6595-04B6-B64D-28B042329A40}">
+				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Oefeningen3\Oefeningen3.tmc" TmcHash="{D5DDB0EF-2344-FA3A-784B-2071CB50A259}">
 					<Name>Oefeningen3 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -128,6 +128,10 @@
 							<Name>prg_Parking.Sensor2</Name>
 							<Type>BOOL</Type>
 						</Var>
+						<Var>
+							<Name>prg_ProductenTellen.bSensor</Name>
+							<Type>BOOL</Type>
+						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
@@ -144,11 +148,7 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>prg_DraaiRichtingMotor.bRechts</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_DraaiRichtingMotor.bMotor</Name>
+							<Name>prg_DraaiRichtingMotor.bAlarm</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -156,7 +156,11 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>prg_DraaiRichtingMotor.bAlarm</Name>
+							<Name>prg_DraaiRichtingMotor.bRechts</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prg_DraaiRichtingMotor.bMotor</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -174,6 +178,11 @@
 						<Var>
 							<Name>prg_Parking.AantalAutos</Name>
 							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>prg_ProductenTellen.bKlep</Name>
+							<Comment><![CDATA[0 is rechtdoor, 2 is afgebogen]]></Comment>
+							<Type>BOOL</Type>
 						</Var>
 					</Vars>
 					<Contexts>

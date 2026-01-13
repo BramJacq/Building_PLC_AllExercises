@@ -23,10 +23,22 @@
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\prg_Finale.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\prg_KantoorVerlichting.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\prg_Thermostaatregeling.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\prg_ThermostaatregelingTijdsturing.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DUTs" />
-    <Folder Include="POUs\GVLs" />
+    <Folder Include="GVLs" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>

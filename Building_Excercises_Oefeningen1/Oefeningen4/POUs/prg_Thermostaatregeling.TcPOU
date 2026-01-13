@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="prg_Thermostaatregeling" Id="{59be5007-5181-49e5-aaa0-53b8d85b4a2b}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM prg_Thermostaatregeling
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <LineIds Name="prg_Thermostaatregeling">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
