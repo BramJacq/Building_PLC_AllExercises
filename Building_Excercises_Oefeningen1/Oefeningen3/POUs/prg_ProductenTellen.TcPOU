@@ -3,13 +3,54 @@
   <POU Name="prg_ProductenTellen" Id="{e18161f0-894e-406c-a80f-4b6353825cb2}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM prg_ProductenTellen
 VAR
+	bSensor		AT		%I*		:BOOL;
+	
+	bKlep		AT		%Q*		:BOOL; //0 is rechtdoor, 1 is afgebogen
+	CounterRechtdoor: CTU;
+	CounterAfslaan: CTU;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[IF 	NOT(bKlep) THEN
+CounterRechtdoor(
+	CU:= bSensor, 
+	PV:= 10);
+END_IF
+
+IF CounterRechtdoor.Q THEN
+	bKlep := 1;
+	CounterRechtdoor.RESET := TRUE;
+END_IF
+
+IF bKlep THEN
+CounterAfslaan(
+	CU:= bSensor,  
+	PV:= 20,);
+END_IF
+
+IF CounterAfslaan.Q THEN
+	bKlep := 0;
+	CounterAfslaan.RESET := TRUE;
+END_IF]]></ST>
     </Implementation>
     <LineIds Name="prg_ProductenTellen">
-      <LineId Id="5" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="15" Count="1" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="39" Count="0" />
+      <LineId Id="49" Count="0" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="23" Count="1" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="41" Count="2" />
+      <LineId Id="51" Count="0" />
+      <LineId Id="40" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
