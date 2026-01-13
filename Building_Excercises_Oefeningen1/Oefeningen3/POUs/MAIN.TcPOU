@@ -16,12 +16,13 @@ END_VAR
 prg_AutomatischeDeur();
 prg_Setpointsturing();
 prg_DraaiRichtingMotor();
-prg_Belsignaal();]]></ST>
+prg_Belsignaal();
+prg_Parking();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
       <LineId Id="7" Count="5" />
-      <LineId Id="16" Count="3" />
+      <LineId Id="16" Count="4" />
     </LineIds>
   </POU>
 </TcPlcObject>
