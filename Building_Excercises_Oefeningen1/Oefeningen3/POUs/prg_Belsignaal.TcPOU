@@ -3,13 +3,28 @@
   <POU Name="prg_Belsignaal" Id="{d7551642-c751-4d8c-9494-27556209977f}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM prg_Belsignaal
 VAR
+	Sensor1, Sensor2		AT		%I*		:BOOL;
+	Bel						AT		%Q*		:BOOL;
+	bBinnen          : BOOL;
+	BinnenKomen: R_TRIG;
+	BuitenGaan: R_TRIG;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[BinnenKomen(CLK := Sensor1);
+BuitenGaan(CLK := Sensor2);
+
+IF BinnenKomen.Q THEN
+    bBinnen := TRUE;      // Sensor1 eerst → binnen
+ELSIF BuitenGaan.Q THEN
+    bBinnen := FALSE;     // Sensor2 eerst → buiten
+END_IF
+
+Bel := bBinnen AND (Sensor1 OR Sensor2);]]></ST>
     </Implementation>
     <LineIds Name="prg_Belsignaal">
-      <LineId Id="5" Count="0" />
+      <LineId Id="20" Count="8" />
+      <LineId Id="16" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
