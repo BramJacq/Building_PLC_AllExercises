@@ -3,13 +3,54 @@
   <POU Name="prg_Thermostaatregeling" Id="{59be5007-5181-49e5-aaa0-53b8d85b4a2b}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM prg_Thermostaatregeling
 VAR
+	Thermostaat			AT		%I*		:REAL;
+	Potentiometer1		AT		%I*		:INT;
+	Potentiometer2		AT		%I*		:INT;
+	
+	Temperatuur			AT		%Q*		:REAL;
+	Verwarming			AT		%Q*		:BOOL; //Is een Lamp
+	TijdsRegeling: FB_WeeklyTimeSwitch;
+	Dag: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[IF (Temperatuur < (Thermostaat - 1.0)) AND Dag THEN
+	Verwarming:=TRUE;
+ELSIF (Temperatuur >= (Thermostaat + 1.0)) OR NOT(Dag) THEN
+	Verwarming:=FALSE;
+END_IF
+
+Thermostaat := 10.0 + (INT_TO_REAL(Potentiometer1) * 20.0 / 32767.0);
+Temperatuur := -30.0 + (INT_TO_REAL(Potentiometer2) * 70.0 / 32767.0);
+
+TijdsRegeling(
+	bEnable:= TRUE, 
+	tCurrentDateTime:= , //hier moet een systeem variabele zoals CURRENT_DT of SYSTEM_DATE_AND_TIME maar vind ik niet
+	tSwitchOnTime:= TOD#08:30, 
+	tSwitchOffTime:= TOD#18:00, 
+	bSunday:= TRUE, 
+	bMonday:= TRUE, 
+	bTuesday:= TRUE, 
+	bWednesday:= TRUE, 
+	bThursday:= TRUE, 
+	bFriday:= TRUE, 
+	bSaturday:= TRUE, 
+	bOutput=> Dag);]]></ST>
     </Implementation>
     <LineIds Name="prg_Thermostaatregeling">
       <LineId Id="5" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="88" Count="0" />
+      <LineId Id="28" Count="3" />
+      <LineId Id="81" Count="6" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="40" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
