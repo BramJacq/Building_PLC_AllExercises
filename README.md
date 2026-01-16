@@ -353,8 +353,8 @@ In onderstaand voorbeeld komen de producten vanaf de linkerzijde. Op deze aanvoe
 | Oefening | Programma (.TcPOU) |
 |--------|------------------|
 | Main | [`MAIN.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs/MAIN.TcPOU) |
-| Checker function1 | [`CheckBounds.TcPOU`](.Building_Excercises_Oefeningen1/Oefeningen3++/POUs/CheckBounds.TcPOU) |
-| Checker function2 | [`CheckRangeInt.TcPOU`](.Building_Excercises_Oefeningen1/Oefeningen3++/POUs/CheckRangeInt.TcPOU) |
+| Checker function1 | [`CheckBounds.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs/CheckBounds.TcPOU) |
+| Checker function2 | [`CheckRangeInt.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs/CheckRangeInt.TcPOU) |
 | PWM | [`prg_PWM.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs/prg_PWM.TcPOU) |
 | Click Log | [`prg_Click_Log.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs/prg_Click_Log.TcPOU) |
 | GetMinimum | [`prg_GetMinimum.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs/prg_GetMinimum.TcPOU) |
