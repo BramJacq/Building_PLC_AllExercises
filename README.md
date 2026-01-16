@@ -404,7 +404,7 @@ Maak een structure ‘Pers_data’ aan met Name, Firstname, Age, Adress.
 Beperk de namen tot 25 en het adres tot 55 karakters.  
 Maak een array van onderstaande structures aan.
 
-LAAT HIER EEN BEETJE PLAATS VOOR EEN AFBEELDING:
+<img width="1136" height="701" alt="image" src="https://github.com/user-attachments/assets/75e88c19-e668-4477-9195-baa33dd48f8d" />
 
 Creëer of overschrijf personeelsdata vanuit de visualisatie in de arrays.  
 Pas hierbij de checker functions toe om de leeftijd de beperken van 0 tot 100 jaar.  
@@ -418,7 +418,7 @@ Zou dit ook in een function geplaatst kunnen worden?
 
 Opm. functies vanuit andere libraries kunnen toegevoegd worden via References (zie afb. links) en vervolgens te zoeken naar de desbetreffende functie (blok) (zie afb. rechts).
 
-LAAT HIER EEN BEETJE PLAATS VOOR EEN AFBEELDING:
+<img width="1132" height="463" alt="image" src="https://github.com/user-attachments/assets/1bd29de5-2e7d-4e48-a24c-527ec6cb17b4" />
 
 ---
 
