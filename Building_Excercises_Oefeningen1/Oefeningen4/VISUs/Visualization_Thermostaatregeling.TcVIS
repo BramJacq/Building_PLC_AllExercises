@@ -415,8 +415,8 @@
                       <v n="Id">1527935698L</v>
                       <l n="Value" t="ArrayList" cet="NamedStyleColor">
                         <o>
-                          <v n="Color">-1</v>
-                          <v n="CanonicalName">"Element-Potentiometer-ScaleColor"</v>
+                          <v n="Color">-16711936</v>
+                          <v n="CanonicalName">"Element-Bar-GraphColor"</v>
                         </o>
                       </l>
                     </o>
@@ -1244,7 +1244,7 @@
                     </o>
                     <o>
                       <v n="Id">397264524L</v>
-                      <v n="Value">"prg_Thermostaatregeling.Temperatuur"</v>
+                      <v n="Value">"prg_Thermostaatregeling.Thermostaat"</v>
                     </o>
                     <o>
                       <v n="Id">2174865440L</v>

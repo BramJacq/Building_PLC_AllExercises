@@ -17,15 +17,17 @@ END_VAR
       <ST><![CDATA[Klep := SensorLaag AND NOT(SensorHoog);
 Vullen := SensorLaag AND NOT(SensorHoog);
 
-IF StopKnop OR SensorLaag OR Vullen OR (SensorHoog AND NOT SensorLaag) THEN
+IF StopKnop OR Vullen OR NOT(SensorLaag) OR (SensorLaag AND NOT(SensorHoog)) OR NOT(StartKnop) THEN
 	Pomp := FALSE;
 ELSIF StartKnop THEN
 	Pomp := TRUE; 
-END_IF]]></ST>
+END_IF
+]]></ST>
     </Implementation>
     <LineIds Name="PRG_OpslagFoutDetectie">
-      <LineId Id="6" Count="6" />
+      <LineId Id="24" Count="6" />
       <LineId Id="5" Count="0" />
+      <LineId Id="31" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

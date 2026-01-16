@@ -19,7 +19,7 @@ END_VAR
 Q02 := S05 AND ((S01 AND S02) OR
 			    (S01 AND S03) OR
 			    (S02 AND S03));
-Q05 := (S04 AND S05) AND (S01 AND S02 AND S03);
+Q05 := (NOT(S04) AND S05) AND (S01 AND S02 AND S03);
 ]]></ST>
     </Implementation>
     <LineIds Name="prg_Reactorvat">

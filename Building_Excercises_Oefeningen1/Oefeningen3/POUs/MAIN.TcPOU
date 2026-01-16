@@ -13,12 +13,12 @@ END_VAR
 //prg_Knipperlicht();
 //prg_Millis();
 //prg_OpenbaarToilet();
-prg_AutomatischeDeur();
-prg_Setpointsturing();
-prg_DraaiRichtingMotor();
-prg_Belsignaal();
-prg_Parking();
-prg_ProductenTellen();]]></ST>
+//prg_AutomatischeDeur();
+//prg_Setpointsturing();
+//prg_DraaiRichtingMotor();
+//prg_Belsignaal();
+//prg_Parking();
+//prg_ProductenTellen();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />

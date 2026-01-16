@@ -17,7 +17,7 @@ END_VAR
       <ST><![CDATA[Klep := SensorLaag AND NOT(SensorHoog);
 Vullen := SensorLaag AND NOT(SensorHoog);
 
-IF StopKnop OR SensorLaag OR Vullen THEN
+IF StopKnop OR Vullen OR (SensorLaag AND NOT(SensorHoog)) THEN
 	Pomp := FALSE;
 ELSIF StartKnop THEN
 	Pomp := TRUE; 
