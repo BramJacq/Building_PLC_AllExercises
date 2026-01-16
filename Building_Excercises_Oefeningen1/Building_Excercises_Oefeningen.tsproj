@@ -15,6 +15,9 @@
 				<Task Id="6" Priority="23" CycleTime="100000" AmsPort="353" AdtTasks="true">
 					<Name>PlcTask3</Name>
 				</Task>
+				<Task Id="7" Priority="24" CycleTime="100000" AmsPort="354" AdtTasks="true">
+					<Name>PlcTask4</Name>
+				</Task>
 			</Tasks>
 		</System>
 		<Plc>
@@ -332,6 +335,18 @@
 					<TaskPouOids>
 						<TaskPouOid Prio="23" OTCID="#x085020c1"/>
 					</TaskPouOids>
+				</Instance>
+			</Project>
+			<Project GUID="{D2F905F7-530E-47BC-A9CB-C991A796D35B}" Name="Oefeningen3++" PrjFilePath="Oefeningen3++\Oefeningen3++.plcproj" TmcFilePath="Oefeningen3++\Oefeningen3++.tmc" ReloadTmc="true" AmsPort="855" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502100" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2">
+					<Name>Oefeningen3++ Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Contexts>
+						<Context>
+							<Id>1</Id>
+							<Name>Default</Name>
+						</Context>
+					</Contexts>
 				</Instance>
 			</Project>
 		</Plc>

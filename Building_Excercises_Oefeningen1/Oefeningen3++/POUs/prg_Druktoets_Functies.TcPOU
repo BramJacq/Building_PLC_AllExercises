@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="prg_Druktoets_Functies" Id="{b8b4c91c-3c6c-45af-bdd6-4f5f22eeb854}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM prg_Druktoets_Functies
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <LineIds Name="prg_Druktoets_Functies">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
