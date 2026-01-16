@@ -346,6 +346,93 @@ In onderstaand voorbeeld komen de producten vanaf de linkerzijde. Op deze aanvoe
 
 ---
 
+## 📁 Oefeningen 3++ — POUs  
+📂 Map:  
+[`Building_Excercises_Oefeningen1/Oefeningen3++/POUs`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs)
+
+| Oefening | Programma (.TcPOU) |
+|--------|------------------|
+| Main | [`MAIN.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs/MAIN.TcPOU) |
+| Checker functions | [`prg_Checker_Functions.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs/prg_Checker_Functions.TcPOU) |
+| PWM | [`prg_PWM.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs/prg_PWM.TcPOU) |
+| Click Log | [`prg_Click_Log.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs/prg_Click_Log.TcPOU) |
+| GetMinimum | [`prg_GetMinimum.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs/prg_GetMinimum.TcPOU) |
+| Personeelsdata | [`prg_Personeelsdata.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs/prg_Personeelsdata.TcPOU) |
+| SearchString | [`prg_SearchString.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs/prg_SearchString.TcPOU) |
+| Druktoets functies | [`prg_Druktoets_Functies.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs/prg_Druktoets_Functies.TcPOU) |
+
+---
+
+## 📝 Oefeningen 3++ — Opgaves
+
+---
+
+### Oefeningen op creëren van FB en FC
+
+---
+
+### Checker functions
+Maak de checker functions aan die gezien werden tijdens de les:
+
+- CheckBounds aan die de waarde tussen 15 en 24 regelt  
+- CheckRangeInt met TYPES voor waarden van 0 t.e.m. 32.767
+
+---
+
+### PWM
+Maak een FB aan die PWM signaal uitstuurt met een instelbare periode en duty cycle.
+
+---
+
+### Click Log
+Maak een FB aan die gedurende 5s. iedere druk registreert, gevolgd met 2s. pauze.  
+De output van de FB is een array met de tijdswaarden tussen twee opeenvolgende drukken in.  
+De tijd start automatisch bij de eerste druk.
+
+---
+
+### GetMinimum
+Maak een FB aan die de kleinste tijdswaarde uit een ARRAY kan halen.  
+Controleer via bovenstaande oefening.  
+Kan dit ook met een functie?
+
+---
+
+### Personeelsdata
+Maak een structure ‘Pers_data’ aan met Name, Firstname, Age, Adress.
+
+Beperk de namen tot 25 en het adres tot 55 karakters.  
+Maak een array van onderstaande structures aan.
+
+LAAT HIER EEN BEETJE PLAATS VOOR EEN AFBEELDING:
+
+Creëer of overschrijf personeelsdata vanuit de visualisatie in de arrays.  
+Pas hierbij de checker functions toe om de leeftijd de beperken van 0 tot 100 jaar.  
+Gender doe je via een enum.
+
+---
+
+### SearchString
+Maak een Functie block aan die de string waardes uit de bovenstaande structure controleert op een bepaalde string zonder hoofdlettergevoeligheid bv de string ‘stijn’.  
+Zou dit ook in een function geplaatst kunnen worden?
+
+Opm. functies vanuit andere libraries kunnen toegevoegd worden via References (zie afb. links) en vervolgens te zoeken naar de desbetreffende functie (blok) (zie afb. rechts).
+
+LAAT HIER EEN BEETJE PLAATS VOOR EEN AFBEELDING:
+
+---
+
+### Druktoets functies
+Maak een FB DrukknopSpecial aan die een drukknop speciale functies geeft zoals:
+
+- Één enkele klik  
+- Dubbele klik  
+- Lang klikken ( > 1s )
+
+Dit zijn natuurlijk drie aparte uitgangen en slechts één ingang.
+
+---
+
 ## 📁 Oefeningen 4 — POUs  
 📂 Map:  
 [`Building_Excercises_Oefeningen1/Oefeningen4/POUs`](./Building_Excercises_Oefeningen1/Oefeningen4/POUs)
