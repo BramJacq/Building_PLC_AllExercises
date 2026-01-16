@@ -15,20 +15,22 @@ END_VAR
     <Implementation>
       <ST><![CDATA[RisingEdge(CLK:= bDrukknop1 OR bDrukknop2 OR bDrukknop3 OR bDrukknop4 OR bDrukknop5 OR bDrukknop6, Q=> bAanUit);
 
+fbVerlichting(IN:= bAanUit, PT:= T#10S);
+	
 IF bAanUit AND bVerlichting THEN
-	bVerlichting:=0;
-ELSIF bAanUit AND NOT(bVerlichting) THEN
-	fbVerlichting(IN:= bAanUit, PT:= T#3S, Q=> bVerlichting);
+	bVerlichting:=FALSE;
+ELSIF bAanUit AND NOT bVerlichting THEN 
+	bVerlichting:=fbVerlichting.Q;
 END_IF
 ]]></ST>
     </Implementation>
     <LineIds Name="prg_TrappenhuisautomaatTijdsinstelling">
       <LineId Id="10" Count="0" />
-      <LineId Id="24" Count="0" />
-      <LineId Id="5" Count="0" />
-      <LineId Id="29" Count="0" />
-      <LineId Id="25" Count="0" />
-      <LineId Id="30" Count="0" />
+      <LineId Id="47" Count="0" />
+      <LineId Id="43" Count="0" />
+      <LineId Id="46" Count="0" />
+      <LineId Id="48" Count="1" />
+      <LineId Id="44" Count="1" />
       <LineId Id="28" Count="0" />
       <LineId Id="17" Count="0" />
     </LineIds>

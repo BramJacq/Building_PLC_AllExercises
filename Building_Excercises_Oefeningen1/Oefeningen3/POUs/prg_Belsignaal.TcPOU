@@ -14,16 +14,17 @@ END_VAR
       <ST><![CDATA[BinnenKomen(CLK := Sensor1);
 BuitenGaan(CLK := Sensor2);
 
-IF BinnenKomen.Q THEN
-    bBinnen := TRUE;      // Sensor1 eerst → binnen
-ELSIF BuitenGaan.Q THEN
-    bBinnen := FALSE;     // Sensor2 eerst → buiten
+IF BinnenKomen.Q AND NOT Sensor2 THEN
+    bBinnen := TRUE;      // S01 eerst → binnen
+ELSIF BuitenGaan.Q AND NOT Sensor1 THEN
+    bBinnen := FALSE;     // S02 eerst → buiten
 END_IF
 
-Bel := bBinnen AND (Sensor1 OR Sensor2);]]></ST>
+Bel := bBinnen AND (Sensor1 OR Sensor2);
+]]></ST>
     </Implementation>
     <LineIds Name="prg_Belsignaal">
-      <LineId Id="20" Count="8" />
+      <LineId Id="47" Count="9" />
       <LineId Id="16" Count="0" />
     </LineIds>
   </POU>

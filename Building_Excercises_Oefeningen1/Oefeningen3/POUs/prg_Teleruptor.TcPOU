@@ -10,7 +10,7 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbKeuken(IN:= bDruk1Keuken OR bDruk2Living OR bDruk3Gang, PT:= T#60ms, Q=> bKeuken);]]></ST>
+      <ST><![CDATA[fbKeuken(IN:= bDruk1Keuken OR bDruk2Living OR bDruk3Gang, PT:= T#10s, Q=> bKeuken);]]></ST>
     </Implementation>
     <LineIds Name="prg_Teleruptor">
       <LineId Id="5" Count="0" />

@@ -8,55 +8,46 @@ VAR
 	LangerAls1sec: TON;
 	LANGEPLUS: TON;
 	LANGEMIN: TON;
-	SetpointWaarde: REAL;
-	KorteDrukPlus: F_TRIG;
-	KorteDrukMin: F_TRIG;
+	FallingDrukPlus: F_TRIG;
+	FallingDrukMin: F_TRIG;
 	SpanningUit		AT			%Q*			:REAL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[LANGEPLUS(IN:= DrukPlus, PT:= T#1S);
-LANGEMIN(IN:= DrukMin, PT:= T#1S);
+      <ST><![CDATA[LANGEPLUS(IN := DrukPlus, PT := T#1S);
+LANGEMIN(IN := DrukMin,  PT := T#1S);
 
-SetpointWaarde := INT_TO_REAL (SetPoint) * 1000	/32767;
+LangerAls1sec(IN := LANGEPLUS.Q OR LANGEMIN.Q, PT := T#1S);
 
-IF LANGEPLUS.Q THEN
-	SetpointWaarde:= SetpointWaarde + 100;
-ELSIF LANGEMIN.Q THEN
-	SetpointWaarde:= SetpointWaarde - 100;
+FallingDrukPlus(CLK := DrukPlus);
+FallingDrukMin(CLK := DrukMin);
+
+(* Lange druk: 100 per seconde *)
+IF LangerAls1sec.Q THEN
+    IF LANGEPLUS.Q THEN
+        SetPoint := SetPoint + 100;
+    ELSIF LANGEMIN.Q THEN
+        SetPoint := SetPoint - 100;
+    END_IF
+    LangerAls1sec(IN := FALSE);   (* timer herstarten *)
 END_IF
 
-KorteDrukPlus(CLK:= DrukPlus);
-KorteDrukMin(CLK:= DrukMin);
-
-IF KorteDrukPlus.Q AND NOT LANGEPLUS.Q THEN
-	SetpointWaarde:= SetpointWaarde + 1;
-ELSIF KorteDrukMin.Q AND NOT LANGEMIN.Q THEN
-	SetpointWaarde:= SetpointWaarde - 1;
+(* Korte druk *)
+IF FallingDrukPlus.Q AND NOT LANGEPLUS.Q THEN
+    SetPoint := SetPoint + 1;
+ELSIF FallingDrukMin.Q AND NOT LANGEMIN.Q THEN
+    SetPoint := SetPoint - 1;
 END_IF
 
-SpanningUit:= SetpointWaarde / 100;]]></ST>
+(* Begrenzing *)
+IF SetPoint > 1000 THEN SetPoint := 1000; END_IF
+IF SetPoint < 0 THEN SetPoint := 0; END_IF
+
+SpanningUit := INT_TO_REAL(SetPoint) * 10.0 / 1000.0;
+]]></ST>
     </Implementation>
     <LineIds Name="prg_Setpointsturing">
-      <LineId Id="13" Count="0" />
-      <LineId Id="15" Count="0" />
-      <LineId Id="20" Count="0" />
-      <LineId Id="23" Count="0" />
-      <LineId Id="18" Count="0" />
-      <LineId Id="17" Count="0" />
-      <LineId Id="21" Count="0" />
-      <LineId Id="27" Count="0" />
-      <LineId Id="29" Count="0" />
-      <LineId Id="22" Count="0" />
-      <LineId Id="32" Count="0" />
-      <LineId Id="31" Count="0" />
-      <LineId Id="34" Count="0" />
-      <LineId Id="37" Count="0" />
-      <LineId Id="36" Count="0" />
-      <LineId Id="38" Count="0" />
-      <LineId Id="40" Count="1" />
-      <LineId Id="39" Count="0" />
-      <LineId Id="44" Count="0" />
+      <LineId Id="109" Count="29" />
       <LineId Id="42" Count="0" />
     </LineIds>
   </POU>

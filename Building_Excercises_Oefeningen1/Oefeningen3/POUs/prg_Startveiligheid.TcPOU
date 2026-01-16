@@ -10,7 +10,7 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbStart(IN:= bStart, PT:= T#5s, Q=> bMachine);]]></ST>
+      <ST><![CDATA[fbStart(IN:= bStart, PT:= T#5S, Q=> bMachine);]]></ST>
     </Implementation>
     <LineIds Name="prg_Startveiligheid">
       <LineId Id="5" Count="0" />

@@ -17,61 +17,46 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[BinnenRising(CLK:= Sensor1);
-BuitenRising(CLK:= Sensor2);
-BinnenFalling(CLK:= Sensor1);
-BuitenFalling(CLK:= Sensor2);
+      <ST><![CDATA[BinnenRising(CLK := Sensor1);
+BuitenRising(CLK := Sensor2);
+BinnenFalling(CLK := Sensor1);
+BuitenFalling(CLK := Sensor2);
 
-
-IF BinnenRising.Q THEN
-	bBinnen:=TRUE;
-ELSIF BuitenRising.Q THEN
-	bBinnen:=FALSE;
+(* Richting bepalen *)
+IF BinnenRising.Q AND NOT Sensor2 THEN
+	bBinnen := TRUE;          // binnenrijden
+ELSIF BuitenRising.Q AND NOT Sensor1 THEN
+	bBinnen := FALSE;         // buitengaan
 END_IF
 
-Slagboom := Sensor1 OR Sensor2;
+(* Slagboom *)
+Slagboom := (Sensor1 OR Sensor2)
+            AND (NOT bBinnen OR (AutoTeller.CV < AutoTeller.PV));
 
+(* Teller *)
 AutoTeller(
-	CU:= (bBinnen AND BuitenFalling.Q), 
-	CD:= (NOT(bBinnen) AND BinnenFalling.Q), 
-	LOAD:= 0, 
-	PV:= 10, //10 autos 
-	);
+	CU := (bBinnen AND BuitenFalling.Q),
+	CD := (NOT bBinnen AND BinnenFalling.Q),
+	LOAD := FALSE,
+	PV := 10
+);
+
+(* Verkeerslichten *)
 IF AutoTeller.CV >= AutoTeller.PV THEN
-	Roodlicht:=TRUE;
-	Groenlicht:=FALSE;
-ELSIF AutoTeller.CV < AutoTeller.PV THEN
-	Groenlicht:=TRUE;
-	Roodlicht:=FALSE;
+	Roodlicht := TRUE;
+	Groenlicht := FALSE;
+ELSE
+	Groenlicht := TRUE;
+	Roodlicht := FALSE;
 END_IF
 
-AantalAutos :=  REAL_TO_INT(AutoTeller.CV)*32767 / 10;//Voor tellerstand aan de inkom van de parkeergarage]]></ST>
+(* Visualisatie tellerstand *)
+AantalAutos := AutoTeller.CV * 32767 / 10;
+]]></ST>
     </Implementation>
     <LineIds Name="prg_Parking">
-      <LineId Id="17" Count="0" />
-      <LineId Id="19" Count="0" />
-      <LineId Id="21" Count="0" />
-      <LineId Id="23" Count="0" />
-      <LineId Id="5" Count="0" />
-      <LineId Id="26" Count="0" />
-      <LineId Id="25" Count="0" />
-      <LineId Id="27" Count="0" />
-      <LineId Id="29" Count="1" />
-      <LineId Id="28" Count="0" />
-      <LineId Id="32" Count="0" />
-      <LineId Id="31" Count="0" />
-      <LineId Id="49" Count="0" />
-      <LineId Id="41" Count="2" />
-      <LineId Id="45" Count="1" />
-      <LineId Id="51" Count="0" />
-      <LineId Id="55" Count="0" />
-      <LineId Id="57" Count="0" />
-      <LineId Id="62" Count="0" />
-      <LineId Id="59" Count="0" />
-      <LineId Id="61" Count="0" />
-      <LineId Id="63" Count="0" />
-      <LineId Id="58" Count="0" />
-      <LineId Id="52" Count="1" />
+      <LineId Id="78" Count="34" />
+      <LineId Id="53" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
