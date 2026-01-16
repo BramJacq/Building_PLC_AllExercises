@@ -20,10 +20,13 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\MAIN.TcPOU">
+    <Compile Include="POUs\CheckBounds.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\prg_Checker_Functions.TcPOU">
+    <Compile Include="POUs\CheckRangeInt.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\prg_Click_Log.TcPOU">

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="CheckBounds" Id="{16801999-9329-4da5-8fbd-ab12aa941d32}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION CheckBounds : INT
+VAR_INPUT
+    InValue : INT;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF InValue < 15 THEN
+    CheckBounds := 15;
+ELSIF InValue > 24 THEN
+    CheckBounds := 24;
+ELSE
+    CheckBounds := InValue;
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="CheckBounds">
+      <LineId Id="10" Count="5" />
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

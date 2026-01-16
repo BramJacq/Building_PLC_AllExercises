@@ -59,7 +59,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{9BAFB355-614E-4004-B15C-52F6EFCBCC7B}" Name="Oefeningen3" PrjFilePath="Oefeningen3\Oefeningen3.plcproj" TmcFilePath="Oefeningen3\Oefeningen3.tmc" ReloadTmc="true" AmsPort="853" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Oefeningen3\Oefeningen3.tmc" TmcHash="{E08DE303-EDFA-942A-14AF-B6ACB2F3D5DB}">
+				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Oefeningen3\Oefeningen3.tmc" TmcHash="{5AA50D35-70A6-8633-5B44-6E573002A447}">
 					<Name>Oefeningen3 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -182,15 +182,15 @@
 							<Type>INT</Type>
 						</Var>
 						<Var>
+							<Name>prg_OpenbaarToilet.bSchakel1</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
 							<Name>prg_OpenbaarToilet.bSchakel2</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>prg_OpenbaarToilet.bSchakel3</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_OpenbaarToilet.bSchakel1</Name>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>
@@ -246,6 +246,10 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
+							<Name>prg_Teleruptor.bKeuken</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
 							<Name>prg_Startveiligheid.bMachine</Name>
 							<Type>BOOL</Type>
 						</Var>
@@ -255,10 +259,6 @@
 						</Var>
 						<Var>
 							<Name>prg_TrappenhuisautomaatTijdsinstelling.bVerlichting</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Teleruptor.bKeuken</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>

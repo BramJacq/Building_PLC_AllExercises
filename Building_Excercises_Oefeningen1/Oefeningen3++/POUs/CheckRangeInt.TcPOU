@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="CheckRangeInt" Id="{a64d7b82-66be-44d2-a85d-c7c89efbe026}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION CheckRangeInt : INT
+VAR_INPUT
+    InValue : INT;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF InValue < 0 THEN
+    CheckRangeInt := 0;
+ELSIF InValue > 32767 THEN
+    CheckRangeInt := 32767;
+ELSE
+    CheckRangeInt := InValue;
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="CheckRangeInt">
+      <LineId Id="12" Count="5" />
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
