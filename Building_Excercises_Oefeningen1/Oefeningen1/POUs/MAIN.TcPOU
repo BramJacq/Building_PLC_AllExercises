@@ -6,16 +6,16 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[prg_jafunctie();
-prg_TweeSignalen();
-prg_Reactorvat();
-prg_Opslagvat();
-PRG_OpslagFoutDetectie();
-prg_Alarmbewaking();
-prg_Teleruptorschakeling();
-prg_MotorMetDrukknop();
-prg_TweePompen();
-prg_DriePompen();]]></ST>
+      <ST><![CDATA[//prg_jafunctie();
+//prg_TweeSignalen();
+//prg_Reactorvat();
+//prg_Opslagvat();
+//PRG_OpslagFoutDetectie();
+//prg_Alarmbewaking();
+//prg_Teleruptorschakeling();
+//prg_MotorMetDrukknop();
+//prg_TweePompen();
+//prg_DriePompen();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />

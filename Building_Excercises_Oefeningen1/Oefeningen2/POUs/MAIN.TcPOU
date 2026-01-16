@@ -6,11 +6,11 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[//prg_PotentioMeter();
-//prg_DynamischVerschalen();
-//prg_TolerantiesEnHysteresis();
-//prg_VerschalenDisplay();
-//prg_Processbewaking3Vaten();]]></ST>
+      <ST><![CDATA[prg_PotentioMeter();
+prg_DynamischVerschalen();
+prg_TolerantiesEnHysteresis();
+prg_VerschalenDisplay();
+prg_Processbewaking3Vaten();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />

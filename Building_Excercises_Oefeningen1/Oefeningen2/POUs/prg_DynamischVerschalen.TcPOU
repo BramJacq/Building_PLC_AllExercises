@@ -11,7 +11,7 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[nScaledMax := 10;
+      <ST><![CDATA[//nScaledMax := 10; IN VISU GEKOZEN
 nWaarde := INT_TO_REAL(nPotentioMeter) * INT_TO_REAL(nScaledMax) / 32767;
 
 //Andere oplossing:
