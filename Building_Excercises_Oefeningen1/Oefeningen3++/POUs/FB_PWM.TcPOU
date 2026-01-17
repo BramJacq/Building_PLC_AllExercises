@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="FB_PWM" Id="{b9b8a553-8d09-45d8-a9f6-44dad8916157}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_PWM
+VAR_INPUT
+    Enable     : BOOL;
+    Periode    : TIME;   // totale PWM-periode
+    DutyCycle  : INT;    // 0 .. 100 (%)
+END_VAR
+
+VAR_OUTPUT
+    PWM_Out    : BOOL;
+END_VAR
+
+VAR
+    tPWM       : TON;
+    tOn        : TIME;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF Enable THEN
+    (* Bereken ON-tijd *)
+    tOn := Periode * DutyCycle / 100;
+
+    tPWM(IN := TRUE, PT := Periode);
+
+    (* PWM-logica *)
+    IF tPWM.ET < tOn THEN
+        PWM_Out := TRUE;
+    ELSE
+        PWM_Out := FALSE;
+    END_IF
+
+    (* Periode herstarten *)
+    IF tPWM.Q THEN
+        tPWM(IN := FALSE);
+    END_IF
+ELSE
+    PWM_Out := FALSE;
+    tPWM(IN := FALSE);
+END_IF
+]]></ST>
+    </Implementation>
+    <LineIds Name="FB_PWM">
+      <LineId Id="39" Count="20" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

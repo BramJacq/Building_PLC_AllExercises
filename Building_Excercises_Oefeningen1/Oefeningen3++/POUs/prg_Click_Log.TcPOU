@@ -2,11 +2,15 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
   <POU Name="prg_Click_Log" Id="{bdf18c93-f4bb-492e-a5f7-46873c367823}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM prg_Click_Log
-VAR
+VAR	
+	ClickLog: FB_Click_Log;
+
+	bDrukknop		AT		%I*		:BOOL;
+	LogTijden 		AT		%Q*		:ARRAY[1..10] OF TIME;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[ClickLog(Drukknop:= bDrukknop, Tijden=> LogTijden);]]></ST>
     </Implementation>
     <LineIds Name="prg_Click_Log">
       <LineId Id="5" Count="0" />

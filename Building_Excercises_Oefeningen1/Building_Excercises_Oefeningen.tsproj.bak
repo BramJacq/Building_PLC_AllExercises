@@ -1,5 +1,16 @@
 <?xml version="1.0"?>
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.68">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{038B4503-18AD-4252-9A3A-F741534E3524}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..10] OF TIME</Name>
+			<BitSize>320</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000048}">TIME</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>10</Elements>
+			</ArrayInfo>
+		</DataType>
+	</DataTypes>
 	<Project ProjectGUID="{68E1D911-7B4F-4547-8176-4BB685F62777}" TargetNetId="199.4.42.250.1.1" Target64Bit="true" ShowHideConfigurations="#x6">
 		<System>
 			<Tasks>
@@ -15,11 +26,14 @@
 				<Task Id="6" Priority="23" CycleTime="100000" AmsPort="353" AdtTasks="true">
 					<Name>PlcTask3</Name>
 				</Task>
+				<Task Id="7" Priority="24" CycleTime="100000" AmsPort="354" AdtTasks="true">
+					<Name>PlcTask4</Name>
+				</Task>
 			</Tasks>
 		</System>
 		<Plc>
 			<Project GUID="{87B26E1A-F1D7-47E9-8B34-A57AAE9303D4}" Name="Oefeningen1" PrjFilePath="Oefeningen1\Oefeningen1.plcproj" TmcFilePath="Oefeningen1\Oefeningen1.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Oefeningen1\Oefeningen1.tmc" TmcHash="{E9D27DFE-F691-7240-6344-EF242032B7D3}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Oefeningen1\Oefeningen1.tmc" TmcHash="{A2ED7A32-936C-C0E5-35E9-BDF647C07576}">
 					<Name>Oefeningen1 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
@@ -39,7 +53,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{D63DA16B-DEA3-4D8E-AB37-631E9FB30855}" Name="Oefeningen2" PrjFilePath="Oefeningen2\Oefeningen2.plcproj" TmcFilePath="Oefeningen2\Oefeningen2.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Oefeningen2\Oefeningen2.tmc" TmcHash="{A1BFC92B-9DE9-AEE6-287E-F4EFA910ECB4}">
+				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Oefeningen2\Oefeningen2.tmc" TmcHash="{A941BC9D-1479-2D5E-0955-B285AA949AD3}">
 					<Name>Oefeningen2 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
@@ -59,245 +73,9 @@
 				</Instance>
 			</Project>
 			<Project GUID="{9BAFB355-614E-4004-B15C-52F6EFCBCC7B}" Name="Oefeningen3" PrjFilePath="Oefeningen3\Oefeningen3.plcproj" TmcFilePath="Oefeningen3\Oefeningen3.tmc" ReloadTmc="true" AmsPort="853" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Oefeningen3\Oefeningen3.tmc" TmcHash="{5AA50D35-70A6-8633-5B44-6E573002A447}">
+				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Oefeningen3\Oefeningen3.tmc" TmcHash="{01C20083-B243-5529-F9A7-0DEFFABD6BCD}">
 					<Name>Oefeningen3 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
-					<Vars VarGrpType="1">
-						<Name>PlcTask Inputs</Name>
-						<Var>
-							<Name>prg_AutomatischeDeur.bHoofdSchakelaar</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_AutomatischeDeur.bDrukknop</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_AutomatischeDeur.bSensor</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Setpointsturing.DrukPlus</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Setpointsturing.DrukMin</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_DraaiRichtingMotor.bSensorA</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_DraaiRichtingMotor.bSensorB</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Belsignaal.Sensor1</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Belsignaal.Sensor2</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Parking.Sensor1</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Parking.Sensor2</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_ProductenTellen.bSensor</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Teleruptor.bDruk1Keuken</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Teleruptor.bDruk2Living</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Teleruptor.bDruk3Gang</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Startveiligheid.bStart</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TrappenhuisautomaatVerlenging.bDrukknop1</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TrappenhuisautomaatVerlenging.bDrukknop2</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TrappenhuisautomaatVerlenging.bDrukknop3</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TrappenhuisautomaatVerlenging.bDrukknop4</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TrappenhuisautomaatVerlenging.bDrukknop5</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TrappenhuisautomaatVerlenging.bDrukknop6</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TrappenhuisautomaatTijdsinstelling.bDrukknop1</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TrappenhuisautomaatTijdsinstelling.bDrukknop2</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TrappenhuisautomaatTijdsinstelling.bDrukknop3</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TrappenhuisautomaatTijdsinstelling.bDrukknop4</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TrappenhuisautomaatTijdsinstelling.bDrukknop5</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TrappenhuisautomaatTijdsinstelling.bDrukknop6</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Knipperlicht.nPotentioMeter</Name>
-							<Comment><![CDATA[UitBreiding:]]></Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>prg_OpenbaarToilet.bSchakel1</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_OpenbaarToilet.bSchakel2</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_OpenbaarToilet.bSchakel3</Name>
-							<Type>BOOL</Type>
-						</Var>
-					</Vars>
-					<Vars VarGrpType="2" AreaNo="1">
-						<Name>PlcTask Outputs</Name>
-						<Var>
-							<Name>prg_AutomatischeDeur.bDeur</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Setpointsturing.SpanningUit</Name>
-							<Type>REAL</Type>
-						</Var>
-						<Var>
-							<Name>prg_DraaiRichtingMotor.bLinks</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_DraaiRichtingMotor.bRechts</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_DraaiRichtingMotor.bMotor</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_DraaiRichtingMotor.bAlarm</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Belsignaal.Bel</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Parking.Slagboom</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Parking.Roodlicht</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Parking.Groenlicht</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Parking.AantalAutos</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>prg_ProductenTellen.bKlep</Name>
-							<Comment><![CDATA[0 is rechtdoor, 1 is afgebogen]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Teleruptor.bKeuken</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Startveiligheid.bMachine</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TrappenhuisautomaatVerlenging.bVerlichting</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_TrappenhuisautomaatTijdsinstelling.bVerlichting</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Knipperlicht.bLamp</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Knipperlicht.bLamp1</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Knipperlicht.bLamp2</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Millis.bPuls</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_Knipperlicht.SpanningPot</Name>
-							<Type>REAL</Type>
-						</Var>
-						<Var>
-							<Name>prg_OpenbaarToilet.bLamp1</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_OpenbaarToilet.bLamp2</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_OpenbaarToilet.bLamp3</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>prg_OpenbaarToilet.bVentilator</Name>
-							<Type>BOOL</Type>
-						</Var>
-					</Vars>
 					<Contexts>
 						<Context>
 							<Id>0</Id>
@@ -315,7 +93,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{AA3F81CD-3A08-47B1-939E-3B0B47B7DAEF}" Name="Oefeningen4" PrjFilePath="Oefeningen4\Oefeningen4.plcproj" TmcFilePath="Oefeningen4\Oefeningen4.tmc" ReloadTmc="true" AmsPort="854" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x085020c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Oefeningen4\Oefeningen4.tmc" TmcHash="{9437F0A9-038B-0C9B-D27F-3C3D2EEEF818}">
+				<Instance Id="#x085020c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Oefeningen4\Oefeningen4.tmc" TmcHash="{E2C2519D-2102-6C14-0F2F-463D69932533}">
 					<Name>Oefeningen4 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
@@ -331,6 +109,40 @@
 					</Contexts>
 					<TaskPouOids>
 						<TaskPouOid Prio="23" OTCID="#x085020c1"/>
+					</TaskPouOids>
+				</Instance>
+			</Project>
+			<Project GUID="{D2F905F7-530E-47BC-A9CB-C991A796D35B}" Name="Oefeningen3++" PrjFilePath="Oefeningen3++\Oefeningen3++.plcproj" TmcFilePath="Oefeningen3++\Oefeningen3++.tmc" ReloadTmc="true" AmsPort="855" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502100" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{CEEBC2A4-B80A-8622-9EC8-F881E271BF52}">
+					<Name>Oefeningen3++ Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Vars VarGrpType="1">
+						<Name>PlcTask Inputs</Name>
+						<Var>
+							<Name>prg_Click_Log.bDrukknop</Name>
+							<Type>BOOL</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2" AreaNo="1">
+						<Name>PlcTask Outputs</Name>
+						<Var>
+							<Name>prg_Click_Log.LogTijden</Name>
+							<Type GUID="{038B4503-18AD-4252-9A3A-F741534E3524}">ARRAY [1..10] OF TIME</Type>
+						</Var>
+					</Vars>
+					<Contexts>
+						<Context>
+							<Id>0</Id>
+							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010070</OTCID>
+							</ManualConfig>
+							<Priority>24</Priority>
+							<CycleTime>10000000</CycleTime>
+						</Context>
+					</Contexts>
+					<TaskPouOids>
+						<TaskPouOid Prio="24" OTCID="#x08502101"/>
 					</TaskPouOids>
 				</Instance>
 			</Project>
