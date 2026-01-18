@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
   <POU Name="prg_Thermostaatregeling" Id="{59be5007-5181-49e5-aaa0-53b8d85b4a2b}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM prg_Thermostaatregeling
 VAR
@@ -11,10 +11,18 @@ VAR
 	Verwarming			AT		%Q*		:BOOL; //Is een Lamp
 	TijdsRegeling: FB_WeeklyTimeSwitch;
 	Dag: BOOL;
+
+    fbTime : FB_LocalSystemTime;
+    currentDT : DATE_AND_TIME;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF (Temperatuur < (Thermostaat - 1.0)) AND Dag THEN
+      <ST><![CDATA[//SYSTEEM TIJD EN DATUM VOOR DE TIJDSREGELING HIERONDER:
+fbTime(bEnable := TRUE);              // één keer starten, daarna cyclisch laten lopen
+currentDT := SYSTEMTIME_TO_DT(fbTime.systemTime);
+
+//Logisch en normaal programma:
+IF (Temperatuur < (Thermostaat - 1.0)) AND Dag THEN
 	Verwarming:=TRUE;
 ELSIF (Temperatuur >= (Thermostaat + 1.0)) OR NOT(Dag) THEN
 	Verwarming:=FALSE;
@@ -23,21 +31,26 @@ END_IF
 Thermostaat := 10.0 + (INT_TO_REAL(Potentiometer1) * 20.0 / 32767.0);
 Temperatuur := -30.0 + (INT_TO_REAL(Potentiometer2) * 70.0 / 32767.0);
 
+//FunctieBlok uit library om tijdsinstellingen van 
 TijdsRegeling(
 	bEnable:= TRUE, 
-	tCurrentDateTime:= , //hier moet een systeem variabele zoals CURRENT_DT of SYSTEM_DATE_AND_TIME maar vind ik niet
+	tCurrentDateTime:= currentDT, //hier moet een systeem variabele zoals CURRENT_DT of SYSTEM_DATE_AND_TIME maar vind ik niet
 	tSwitchOnTime:= TOD#08:30, 
 	tSwitchOffTime:= TOD#18:00, 
 	bSunday:= TRUE, 
 	bMonday:= TRUE, 
 	bTuesday:= TRUE, 
-	bWednesday:= TRUE, 
+	bWednesday:= TRUE, 	
 	bThursday:= TRUE, 
 	bFriday:= TRUE, 
 	bSaturday:= TRUE, 
-	bOutput=> Dag);]]></ST>
+	bOutput=> Dag);
+	]]></ST>
     </Implementation>
     <LineIds Name="prg_Thermostaatregeling">
+      <LineId Id="113" Count="2" />
+      <LineId Id="107" Count="0" />
+      <LineId Id="104" Count="0" />
       <LineId Id="5" Count="0" />
       <LineId Id="13" Count="0" />
       <LineId Id="10" Count="0" />
@@ -46,11 +59,13 @@ TijdsRegeling(
       <LineId Id="16" Count="0" />
       <LineId Id="15" Count="0" />
       <LineId Id="24" Count="0" />
+      <LineId Id="116" Count="0" />
       <LineId Id="88" Count="0" />
       <LineId Id="28" Count="3" />
       <LineId Id="81" Count="6" />
       <LineId Id="32" Count="0" />
       <LineId Id="40" Count="0" />
+      <LineId Id="102" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

@@ -7,7 +7,7 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[//prg_KantoorVerlichting();
-//prg_Thermostaatregeling();]]></ST>
+prg_Thermostaatregeling();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />

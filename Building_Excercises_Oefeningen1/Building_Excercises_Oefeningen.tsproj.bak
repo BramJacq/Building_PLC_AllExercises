@@ -82,9 +82,36 @@
 				</Instance>
 			</Project>
 			<Project GUID="{AA3F81CD-3A08-47B1-939E-3B0B47B7DAEF}" Name="Oefeningen4" PrjFilePath="Oefeningen4\Oefeningen4.plcproj" TmcFilePath="Oefeningen4\Oefeningen4.tmc" ReloadTmc="true" AmsPort="854" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x085020c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Oefeningen4\Oefeningen4.tmc" TmcHash="{E2C2519D-2102-6C14-0F2F-463D69932533}">
+				<Instance Id="#x085020c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Oefeningen4\Oefeningen4.tmc" TmcHash="{707E6B45-4BB6-E5AC-885E-5C7C36371C41}">
 					<Name>Oefeningen4 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Vars VarGrpType="1">
+						<Name>PlcTask Inputs</Name>
+						<Var>
+							<Name>prg_Thermostaatregeling.Thermostaat</Name>
+							<Type>REAL</Type>
+						</Var>
+						<Var>
+							<Name>prg_Thermostaatregeling.Potentiometer1</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>prg_Thermostaatregeling.Potentiometer2</Name>
+							<Type>INT</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2" AreaNo="1">
+						<Name>PlcTask Outputs</Name>
+						<Var>
+							<Name>prg_Thermostaatregeling.Temperatuur</Name>
+							<Type>REAL</Type>
+						</Var>
+						<Var>
+							<Name>prg_Thermostaatregeling.Verwarming</Name>
+							<Comment><![CDATA[Is een Lamp]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+					</Vars>
 					<Contexts>
 						<Context>
 							<Id>0</Id>
@@ -102,7 +129,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{D2F905F7-530E-47BC-A9CB-C991A796D35B}" Name="Oefeningen3++" PrjFilePath="Oefeningen3++\Oefeningen3++.plcproj" TmcFilePath="Oefeningen3++\Oefeningen3++.tmc" ReloadTmc="true" AmsPort="855" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502100" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{2B223B36-A4A2-1CD9-6728-A303A9E40911}">
+				<Instance Id="#x08502100" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{A5EE0B15-C6D0-E0FA-B9B3-064FDE849EFE}">
 					<Name>Oefeningen3++ Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
