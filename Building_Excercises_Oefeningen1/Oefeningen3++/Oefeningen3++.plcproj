@@ -17,6 +17,9 @@
     <LibraryReferences>{5d5fc5ec-7454-492d-bab4-9c6b889d00c4}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DUTs\Pers_data.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GlobalTextList.TcGTLO">
       <SubType>Code</SubType>
     </Compile>

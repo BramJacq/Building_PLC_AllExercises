@@ -8,10 +8,12 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[PWM(Enable:= TRUE, Periode:= T#1S, DutyCycle:= 25, PWM_Out=> bPWMOUT);]]></ST>
+      <ST><![CDATA[PWM(Enable:= TRUE, Periode:= T#1S, DutyCycle:= 25, PWM_Out=> bPWMOUT);
+]]></ST>
     </Implementation>
     <LineIds Name="prg_PWM">
       <LineId Id="5" Count="0" />
+      <LineId Id="8" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

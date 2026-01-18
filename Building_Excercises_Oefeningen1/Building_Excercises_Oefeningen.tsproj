@@ -102,23 +102,9 @@
 				</Instance>
 			</Project>
 			<Project GUID="{D2F905F7-530E-47BC-A9CB-C991A796D35B}" Name="Oefeningen3++" PrjFilePath="Oefeningen3++\Oefeningen3++.plcproj" TmcFilePath="Oefeningen3++\Oefeningen3++.tmc" ReloadTmc="true" AmsPort="855" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502100" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{1742FBE2-9ED9-4EBD-3659-B71E8846478C}">
+				<Instance Id="#x08502100" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{7B31A75D-6480-FC34-0906-3D2FCA5337FA}">
 					<Name>Oefeningen3++ Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
-					<Vars VarGrpType="1">
-						<Name>PlcTask Inputs</Name>
-						<Var>
-							<Name>prg_GetMinimum.bDrukknop</Name>
-							<Type>BOOL</Type>
-						</Var>
-					</Vars>
-					<Vars VarGrpType="2" AreaNo="1">
-						<Name>PlcTask Outputs</Name>
-						<Var>
-							<Name>prg_GetMinimum.tMinTime</Name>
-							<Type>TIME</Type>
-						</Var>
-					</Vars>
 					<Contexts>
 						<Context>
 							<Id>0</Id>

@@ -3,12 +3,48 @@
   <POU Name="prg_Personeelsdata" Id="{e915f581-d964-4e15-9a7a-844beb749528}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM prg_Personeelsdata
 VAR
+	Personeel : ARRAY[1..6] OF Pers_data;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[(* P1 *)
+Personeel[1].Name      := 'Müller';
+Personeel[1].Firstname := 'Peter';
+Personeel[1].Age       := 32;
+Personeel[1].Address   := 'Postweg 34';
+
+(* P2 *)
+Personeel[2].Name      := 'Maesen';
+Personeel[2].Firstname := 'Stijn';
+Personeel[2].Age       := 15;
+Personeel[2].Address   := 'Grote steenweg 8';
+
+(* P3 *)
+Personeel[3].Name      := 'Paque';
+Personeel[3].Firstname := 'Stéphanie';
+Personeel[3].Age       := 42;
+Personeel[3].Address   := 'Tongersesteenweg 456';
+
+(* P4 *)
+Personeel[4].Name      := 'Fossen';
+Personeel[4].Firstname := 'Jo';
+Personeel[4].Age       := 20;
+Personeel[4].Address   := 'Broekstraat 45';
+
+(* P5 *)
+Personeel[5].Name      := 'Poesmans';
+Personeel[5].Firstname := 'Benny';
+Personeel[5].Age       := 72;
+Personeel[5].Address   := 'Veldweg 1A';
+
+(* P6 *)
+Personeel[6].Name      := 'Dybek';
+Personeel[6].Firstname := 'Isolde';
+Personeel[6].Age       := 55;
+Personeel[6].Address   := 'Slagerijstraat 6';]]></ST>
     </Implementation>
     <LineIds Name="prg_Personeelsdata">
+      <LineId Id="7" Count="33" />
       <LineId Id="5" Count="0" />
     </LineIds>
   </POU>
