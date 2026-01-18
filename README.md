@@ -356,11 +356,18 @@ In onderstaand voorbeeld komen de producten vanaf de linkerzijde. Op deze aanvoe
 | Checker function1 | [`CheckBounds.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs/CheckBounds.TcPOU) |
 | Checker function2 | [`CheckRangeInt.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs/CheckRangeInt.TcPOU) |
 | PWM | [`prg_PWM.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs/prg_PWM.TcPOU) |
+| FB_PWM | [`FB_PWM.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs/FB_PWM.TcPOU) |
 | Click Log | [`prg_Click_Log.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs/prg_Click_Log.TcPOU) |
+| FB Click Log | [`FB_Click_Log.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs/FB_Click_Log.TcPOU) |
 | GetMinimum | [`prg_GetMinimum.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs/prg_GetMinimum.TcPOU) |
+| FB GetMinimum | [`FB_GetMinimum.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs/FB_GetMinimum.TcPOU) |
+| FUNCTION GetMinimum | [`FGetMinimum.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs/FGetMinimum.TcPOU) |
 | Personeelsdata | [`prg_Personeelsdata.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs/prg_Personeelsdata.TcPOU) |
+| Structure Personeelsdata | [`Pers_data.TcDUT`](./Building_Excercises_Oefeningen1/Oefeningen3++/DUTs/Pers_data.TcDUT) |
 | SearchString | [`prg_SearchString.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs/prg_SearchString.TcPOU) |
+| FB SearchString | [`FB_SearchString.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs/FB_SearchString.TcPOU) |
 | Druktoets functies | [`prg_Druktoets_Functies.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs/prg_Druktoets_Functies.TcPOU) |
+| FB Druktoets functies | [`FB_DrukknopSpecial.TcPOU`](./Building_Excercises_Oefeningen1/Oefeningen3++/POUs/FB_DrukknopSpecial.TcPOU) |
 
 ---
 
