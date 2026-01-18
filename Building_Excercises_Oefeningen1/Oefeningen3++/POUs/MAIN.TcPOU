@@ -9,11 +9,12 @@ END_VAR
       <ST><![CDATA[//prg_PWM();
 //prg_Click_Log();
 //prg_GetMinimum();
-prg_Personeelsdata();]]></ST>
+//prg_Personeelsdata();
+prg_SearchString();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
-      <LineId Id="6" Count="2" />
+      <LineId Id="6" Count="3" />
     </LineIds>
   </POU>
 </TcPlcObject>

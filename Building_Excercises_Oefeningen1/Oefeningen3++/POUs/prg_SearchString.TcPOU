@@ -3,12 +3,26 @@
   <POU Name="prg_SearchString" Id="{f413e5f4-2f33-48b8-97e6-0d917fead22f}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM prg_SearchString
 VAR
+	Persoon : Pers_data := (
+		Name := 'Peeters',
+		Firstname := 'Stijn',
+		Address := 'Kerkstraat 12'
+	);
+
+	SearchFB : FB_SearchString;
+	Result   : BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[SearchFB(
+	Person := Persoon,
+	SearchTxt := 'stijn'
+);
+
+Result := SearchFB.Match;]]></ST>
     </Implementation>
     <LineIds Name="prg_SearchString">
+      <LineId Id="14" Count="4" />
       <LineId Id="5" Count="0" />
     </LineIds>
   </POU>

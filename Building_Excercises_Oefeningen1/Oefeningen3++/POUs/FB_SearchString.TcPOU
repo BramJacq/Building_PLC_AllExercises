@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="FB_SearchString" Id="{0d1ccf8d-19c5-4c5b-82eb-72f5881f243d}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_SearchString
+VAR_INPUT
+	Person    : Pers_data; //DUT STRUCT
+	SearchTxt : STRING(25);
+END_VAR
+VAR_OUTPUT
+	Match     : BOOL;
+END_VAR
+VAR
+	AllText   : STRING(120);
+	AllTextLower  : STRING(120);
+	SearchLower   : STRING(25);
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* alles samenvoegen *)
+AllText := CONCAT(
+				CONCAT(Person.Name, Person.Firstname),
+				Person.Address
+			);
+
+(* naar lowercase omzetten *)
+AllTextLower := F_ToLCase(AllText);
+SearchLower  := F_ToLCase(SearchTxt);
+
+(* vergelijken *)
+IF FIND(AllTextLower, SearchLower) > 0 THEN
+	Match := TRUE;
+ELSE
+	Match := FALSE;
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="FB_SearchString">
+      <LineId Id="86" Count="14" />
+      <LineId Id="67" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

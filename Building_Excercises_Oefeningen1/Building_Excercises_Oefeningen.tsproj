@@ -102,7 +102,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{D2F905F7-530E-47BC-A9CB-C991A796D35B}" Name="Oefeningen3++" PrjFilePath="Oefeningen3++\Oefeningen3++.plcproj" TmcFilePath="Oefeningen3++\Oefeningen3++.tmc" ReloadTmc="true" AmsPort="855" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502100" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{7B31A75D-6480-FC34-0906-3D2FCA5337FA}">
+				<Instance Id="#x08502100" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{2B223B36-A4A2-1CD9-6728-A303A9E40911}">
 					<Name>Oefeningen3++ Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
