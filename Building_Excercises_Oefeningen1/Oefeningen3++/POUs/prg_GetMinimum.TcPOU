@@ -3,13 +3,25 @@
   <POU Name="prg_GetMinimum" Id="{15009af4-906b-4550-a345-9c273a7df78c}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM prg_GetMinimum
 VAR
+	FB_GetMinimum: FB_GetMinimum;
+	FB_Click_Log: FB_Click_Log;
+	bDrukknop		AT		%I*		:BOOL;
+	tMinTime		AT		%Q*		:TIME;
+	LogTijden 		:ARRAY[1..10] OF TIME;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[FB_Click_Log(Drukknop:= bDrukknop, Tijden=> LogTijden);
+FB_GetMinimum(Times:= LogTijden, MinTime=> tMinTime);
+
+//Met een functie ipv FunctieBlok (ongetest)
+//tMinTime := FGetMinimum(LogTijden);]]></ST>
     </Implementation>
     <LineIds Name="prg_GetMinimum">
+      <LineId Id="8" Count="0" />
       <LineId Id="5" Count="0" />
+      <LineId Id="14" Count="1" />
+      <LineId Id="7" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

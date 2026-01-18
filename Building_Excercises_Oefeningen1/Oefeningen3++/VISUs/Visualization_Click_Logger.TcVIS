@@ -16,7 +16,7 @@
                       <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
                         <o>
                           <v n="Id">1186196937L</v>
-                          <v n="Value">"prg_Click_Log.bDrukknop"</v>
+                          <v n="Value">"prg_GetMinimum.bDrukknop"</v>
                         </o>
                       </l>
                     </o>
@@ -165,12 +165,12 @@
                       <v n="Value">"Drukknop"</v>
                     </o>
                     <o>
-                      <v n="Id">823443203L</v>
-                      <v n="Value">"841"</v>
-                    </o>
-                    <o>
                       <v n="Id">2597686782L</v>
                       <v n="Value">false</v>
+                    </o>
+                    <o>
+                      <v n="Id">823443203L</v>
+                      <v n="Value">"841"</v>
                     </o>
                   </l>
                 </o>

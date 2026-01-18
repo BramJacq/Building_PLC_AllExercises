@@ -7,11 +7,12 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[//prg_PWM();
-prg_Click_Log();]]></ST>
+//prg_Click_Log();
+prg_GetMinimum();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
-      <LineId Id="6" Count="0" />
+      <LineId Id="6" Count="1" />
     </LineIds>
   </POU>
 </TcPlcObject>
