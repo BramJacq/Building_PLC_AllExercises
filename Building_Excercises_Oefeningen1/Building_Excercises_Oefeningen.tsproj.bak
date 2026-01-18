@@ -82,7 +82,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{AA3F81CD-3A08-47B1-939E-3B0B47B7DAEF}" Name="Oefeningen4" PrjFilePath="Oefeningen4\Oefeningen4.plcproj" TmcFilePath="Oefeningen4\Oefeningen4.tmc" ReloadTmc="true" AmsPort="854" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x085020c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Oefeningen4\Oefeningen4.tmc" TmcHash="{707E6B45-4BB6-E5AC-885E-5C7C36371C41}">
+				<Instance Id="#x085020c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Oefeningen4\Oefeningen4.tmc" TmcHash="{5EA2A0EA-5C9E-662A-85C1-1E1FD740F1C4}">
 					<Name>Oefeningen4 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">

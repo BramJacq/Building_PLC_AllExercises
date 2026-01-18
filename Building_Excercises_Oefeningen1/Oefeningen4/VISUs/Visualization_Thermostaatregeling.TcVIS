@@ -394,10 +394,7 @@
                     </o>
                     <o>
                       <v n="Id">3837067714L</v>
-                      <o n="Value" t="ConstantWithOptionalExpression">
-                        <v n="Constant" t="Single">40</v>
-                        <v n="Expression">""</v>
-                      </o>
+                      <v n="Value" t="Single">40</v>
                     </o>
                     <o>
                       <v n="Id">2867424708L</v>
@@ -1572,7 +1569,7 @@
             </o>
             <v n="DialogDut">{8038d96a-d9c0-475a-ac12-53923ee763e8}</v>
           </o>
-          <v n="LastUsedIdForIdentifier">14</v>
+          <v n="LastUsedIdForIdentifier">15</v>
           <o n="TextDocument" t="TextDocument">
             <a n="TextLines" cet="TextLine">
               <o>
@@ -1628,7 +1625,6 @@
         <Type n="Boolean">System.Boolean</Type>
         <Type n="CaseInsensitiveHashtable">{7df88604-7ac5-4e36-91c4-55e4fdad3e68}</Type>
         <Type n="ComplexInput">{1de566f6-72a7-494c-9353-9a418172c96e}</Type>
-        <Type n="ConstantWithOptionalExpression">{be74fbbc-f60e-4118-88db-b2ee5169938e}</Type>
         <Type n="Double">System.Double</Type>
         <Type n="GeneratedLanguageModelEntriesData">{703465dc-4679-4ff2-bcc3-c57d0a204da3}</Type>
         <Type n="GenericFbDescription">{40d6dd8d-dfd0-493a-8e29-c9a35e1e6539}</Type>

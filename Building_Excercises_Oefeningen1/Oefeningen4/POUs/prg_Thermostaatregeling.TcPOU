@@ -17,19 +17,32 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[//SYSTEEM TIJD EN DATUM VOOR DE TIJDSREGELING HIERONDER:
+      <ST><![CDATA[//JE MOET VANONDER DE TIJDEN VAN EN TOT WANNEER AANPASSEN ALS JE DIT PROGRAMMA NIET TUSSEN
+// 8u30 en 18u00 test
+
+//SYSTEEM TIJD EN DATUM VOOR DE TIJDSREGELING HIERONDER:
 fbTime(bEnable := TRUE);              // één keer starten, daarna cyclisch laten lopen
 currentDT := SYSTEMTIME_TO_DT(fbTime.systemTime);
 
-//Logisch en normaal programma:
-IF (Temperatuur < (Thermostaat - 1.0)) AND Dag THEN
-	Verwarming:=TRUE;
-ELSIF (Temperatuur >= (Thermostaat + 1.0)) OR NOT(Dag) THEN
-	Verwarming:=FALSE;
-END_IF
+//programma met echte potentiometers van 0-32767:
+//Thermostaat := 10.0 + (INT_TO_REAL(Potentiometer1) * 20.0 / 32767.0);
+//Temperatuur := -30.0 + (INT_TO_REAL(Potentiometer2) * 70.0 / 32767.0);
 
-Thermostaat := 10.0 + (INT_TO_REAL(Potentiometer1) * 20.0 / 32767.0);
-Temperatuur := -30.0 + (INT_TO_REAL(Potentiometer2) * 70.0 / 32767.0);
+//IF (Temperatuur < (Thermostaat - 1.0)) AND Dag THEN
+//	Verwarming:=TRUE;
+//ELSIF (Temperatuur >= (Thermostaat + 1.0)) OR NOT(Dag) THEN
+//	Verwarming:=FALSE;
+//END_IF
+
+//Programma met de potentiometers in de visualisatie (anders verschaald)
+Thermostaat := Potentiometer1;  // waarde van 10..30°C uit de Visu
+Temperatuur := Potentiometer2;  // waarde van -30..40°C uit de Visu
+
+IF (Temperatuur < (Thermostaat - 1.0)) AND Dag THEN
+    Verwarming := TRUE;
+ELSIF (Temperatuur >= (Thermostaat + 1.0)) OR NOT(Dag) THEN
+    Verwarming := FALSE;
+END_IF
 
 //FunctieBlok uit library om tijdsinstellingen van 
 TijdsRegeling(
@@ -48,17 +61,22 @@ TijdsRegeling(
 	]]></ST>
     </Implementation>
     <LineIds Name="prg_Thermostaatregeling">
+      <LineId Id="134" Count="2" />
       <LineId Id="113" Count="2" />
+      <LineId Id="119" Count="0" />
+      <LineId Id="117" Count="0" />
       <LineId Id="107" Count="0" />
+      <LineId Id="120" Count="0" />
       <LineId Id="104" Count="0" />
       <LineId Id="5" Count="0" />
       <LineId Id="13" Count="0" />
       <LineId Id="10" Count="0" />
       <LineId Id="14" Count="0" />
       <LineId Id="11" Count="0" />
-      <LineId Id="16" Count="0" />
-      <LineId Id="15" Count="0" />
-      <LineId Id="24" Count="0" />
+      <LineId Id="121" Count="1" />
+      <LineId Id="125" Count="1" />
+      <LineId Id="128" Count="4" />
+      <LineId Id="123" Count="0" />
       <LineId Id="116" Count="0" />
       <LineId Id="88" Count="0" />
       <LineId Id="28" Count="3" />
