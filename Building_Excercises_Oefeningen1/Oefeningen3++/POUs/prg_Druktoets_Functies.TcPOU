@@ -3,10 +3,11 @@
   <POU Name="prg_Druktoets_Functies" Id="{b8b4c91c-3c6c-45af-bdd6-4f5f22eeb854}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM prg_Druktoets_Functies
 VAR
+	FB_Drukknop_Special: FB_DrukknopSpecial;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[FB_Drukknop_Special(bDrukknop:= , bSingle=> , bDouble=> , bLong=> );]]></ST>
     </Implementation>
     <LineIds Name="prg_Druktoets_Functies">
       <LineId Id="5" Count="0" />

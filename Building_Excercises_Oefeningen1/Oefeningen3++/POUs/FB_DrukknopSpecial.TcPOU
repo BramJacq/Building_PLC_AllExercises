@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="FB_DrukknopSpecial" Id="{e3bfc8b3-48b0-41ec-970b-bff868bbde04}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_DrukknopSpecial
+VAR_INPUT
+    bDrukknop : BOOL;          // fysiek knopsignaal
+END_VAR
+
+VAR_OUTPUT
+    bSingle    : BOOL;
+    bDouble    : BOOL;
+    bLong      : BOOL;
+END_VAR
+
+VAR
+    fbSD : FB_SingleDoubleClick;
+    fbSL : FB_ShortLongClick;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// --- Doorgeven van de knop als input ---
+fbSD(bSwitch := bDrukknop, tSwitchTime := T#500MS);
+fbSL(bSwitch := bDrukknop, tSwitchTime := T#1S);
+
+// --- Outputs ---
+bSingle := fbSD.bSingleClick AND NOT fbSL.bLongClick;
+bDouble := fbSD.bDoubleClick;
+bLong   := fbSL.bLongClick;]]></ST>
+    </Implementation>
+    <LineIds Name="FB_DrukknopSpecial">
+      <LineId Id="23" Count="6" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

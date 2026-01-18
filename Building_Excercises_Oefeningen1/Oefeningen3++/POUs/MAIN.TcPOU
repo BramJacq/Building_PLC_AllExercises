@@ -10,11 +10,12 @@ END_VAR
 //prg_Click_Log();
 //prg_GetMinimum();
 //prg_Personeelsdata();
-prg_SearchString();]]></ST>
+//prg_SearchString();
+prg_Druktoets_Functies();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
-      <LineId Id="6" Count="3" />
+      <LineId Id="6" Count="4" />
     </LineIds>
   </POU>
 </TcPlcObject>
