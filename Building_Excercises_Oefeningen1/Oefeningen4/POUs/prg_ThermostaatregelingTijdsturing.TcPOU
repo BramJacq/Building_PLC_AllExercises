@@ -1,16 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
   <POU Name="prg_ThermostaatregelingTijdsturing" Id="{2d87b2cd-fdc6-4437-aac8-4dcd339217b6}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM prg_ThermostaatregelingTijdsturing
 VAR
-	
+   	Temperatuur : REAL;            
+    TempLog     : ARRAY[0..19] OF REAL;
+    TempAlarm   : ARRAY[0..19] OF BOOL;
+    idx         : INT := 0;        
+    tSample     : TON;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[// timer 1 seconde
+tSample(IN := TRUE, PT := T#1S);
+tSample();
+
+IF tSample.Q THEN
+    TempLog[idx] := Temperatuur;               // log huidige temperatuur
+    TempAlarm[idx] := (Temperatuur < 10.0);   // alarm als <10°C
+    idx := (idx + 1) MOD 20;                  // circular buffer
+    tSample(IN := FALSE);
+    tSample(IN := TRUE);
+END_IF]]></ST>
     </Implementation>
     <LineIds Name="prg_ThermostaatregelingTijdsturing">
+      <LineId Id="30" Count="8" />
       <LineId Id="5" Count="0" />
+      <LineId Id="39" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
