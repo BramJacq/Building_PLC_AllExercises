@@ -1,14 +1,112 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
   <POU Name="prg_Finale" Id="{64dd82a2-8bfc-427e-8cbc-e39c4323b1b5}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM prg_Finale
 VAR
+    (* ---- Kamers ---- *)
+    Woonkamer : DUT_Kamer := (Temperatuur := 21.0);
+    Keuken    : DUT_Kamer := (Temperatuur := 20.5);
+    Badkamer  : DUT_Kamer := (Temperatuur := 22.0);
+    Gang      : DUT_Kamer := (Temperatuur := 19.5);
+
+    (* ---- 10s timer ---- *)
+    tMeasure : TON;
+
+    (* ---- Moving Average buffers (10 waarden) ---- *)
+    TempBuf_WK : ARRAY[1..10] OF REAL;
+    TempBuf_K  : ARRAY[1..10] OF REAL;
+    TempBuf_B  : ARRAY[1..10] OF REAL;
+    TempBuf_G  : ARRAY[1..10] OF REAL;
+
+    idx : INT := 1; (* circulaire index 1..10 *)
+
+    (* ---- Logging MA + timestamp (laatste 20 waarden) ---- *)
+    LogMA : ARRAY[1..20, 1..2] OF LREAL;
+    (* Kolom 1 = timestamp (s), Kolom 2 = MA temperatuur *)
+
+    logIndex : INT := 1;
+
+    sysTime : LTIME;
+
+    (* ---- VISU toggles ---- *)
+    VISU_Toggle_WK : BOOL;
+    VISU_Toggle_K  : BOOL;
+    VISU_Toggle_B  : BOOL;
+    VISU_Toggle_G  : BOOL;
+
+    VISU_ShowTemp : BOOL;
 END_VAR
+
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[(* Start 10s timer *)
+tMeasure(IN := TRUE, PT := T#10s);
+
+(* ---- Licht toggles (via visualisatie) ---- *)
+IF VISU_Toggle_WK THEN
+    Woonkamer.Licht := NOT Woonkamer.Licht;
+    VISU_Toggle_WK := FALSE;
+END_IF
+
+IF VISU_Toggle_K THEN
+    Keuken.Licht := NOT Keuken.Licht;
+    VISU_Toggle_K := FALSE;
+END_IF
+
+IF VISU_Toggle_B THEN
+    Badkamer.Licht := NOT Badkamer.Licht;
+    VISU_Toggle_B := FALSE;
+END_IF
+
+IF VISU_Toggle_G THEN
+    Gang.Licht := NOT Gang.Licht;
+    VISU_Toggle_G := FALSE;
+END_IF
+
+(* ---- Elke 10 seconden meten ---- *)
+IF tMeasure.Q THEN
+
+    (* Simuleer temperatuur (later vervang je dit door echte sensor) *)
+    Woonkamer.Temperatuur := Woonkamer.Temperatuur + (RAND() - 0.5) * 0.2;
+    Keuken.Temperatuur    := Keuken.Temperatuur + (RAND() - 0.5) * 0.2;
+    Badkamer.Temperatuur  := Badkamer.Temperatuur + (RAND() - 0.5) * 0.2;
+    Gang.Temperatuur      := Gang.Temperatuur + (RAND() - 0.5) * 0.2;
+
+    (* ---- Circulaire buffer update ---- *)
+    idx := idx + 1;
+    IF idx > 10 THEN
+        idx := 1;
+    END_IF
+
+    TempBuf_WK[idx] := Woonkamer.Temperatuur;
+    TempBuf_K[idx]  := Keuken.Temperatuur;
+    TempBuf_B[idx]  := Badkamer.Temperatuur;
+    TempBuf_G[idx]  := Gang.Temperatuur;
+
+    (* ---- Bereken Moving Average ---- *)
+    Woonkamer.MA_Temp := MEAN(TempBuf_WK);
+    Keuken.MA_Temp    := MEAN(TempBuf_K);
+    Badkamer.MA_Temp  := MEAN(TempBuf_B);
+    Gang.MA_Temp      := MEAN(TempBuf_G);
+
+    (* ---- Timestamp ---- *)
+    sysTime := F_GetCurTime();
+
+    (* ---- Log laatste 20 MA waarden (voor tabel in VISU) ---- *)
+    LogMA[logIndex,1] := LTIME_TO_LREAL(sysTime) / 1_000_000_000.0; (* seconden *)
+    LogMA[logIndex,2] := Woonkamer.MA_Temp; (* je kan hier ook andere kamer kiezen *)
+
+    logIndex := logIndex + 1;
+    IF logIndex > 20 THEN
+        logIndex := 1;
+    END_IF
+
+    (* Reset timer *)
+    tMeasure(IN := FALSE);
+END_IF]]></ST>
     </Implementation>
     <LineIds Name="prg_Finale">
+      <LineId Id="112" Count="63" />
       <LineId Id="5" Count="0" />
     </LineIds>
   </POU>

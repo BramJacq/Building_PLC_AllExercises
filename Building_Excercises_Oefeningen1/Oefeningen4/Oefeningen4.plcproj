@@ -17,6 +17,9 @@
     <LibraryReferences>{8b0191a3-6e4e-41d9-b0c6-f0eaf62f1f03}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DUTs\DUT_Kamer.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GlobalTextList.TcGTLO">
       <SubType>Code</SubType>
     </Compile>
@@ -24,6 +27,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\MEAN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\prg_Finale.TcPOU">

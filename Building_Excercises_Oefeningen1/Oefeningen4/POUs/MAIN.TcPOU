@@ -8,7 +8,7 @@ END_VAR
     <Implementation>
       <ST><![CDATA[//prg_KantoorVerlichting();
 //prg_Thermostaatregeling();
-//prg_ThermostaatregelingTijdsturing();]]></ST>
+prg_ThermostaatregelingTijdsturing();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
