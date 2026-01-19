@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="prg_Verschalingmetfunctie" Id="{6c67f3fd-77fc-4cf2-b611-2e0f74a12d4a}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM prg_Verschalingmetfunctie
+VAR
+	//POTENTIOMETERRRR
+	//0 tot 32767
+	nPotentiometer		AT		%I*		:INT;
+	nPotentiometerValue		:INT;
+	nPower				AT		%Q*		:INT:=32767;
+	
+	//DISPLAYYYYY
+	//–100 tot +2 000
+	nDisplay			AT		%Q*		:INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+//Hier wordt de data van potentiometer van 0 tot 30 verschaald
+nPotentiometer:=TO_INT(F_Scale(
+	fRawData:= nPotentiometerValue, 
+	fRawDataLowerOffLimit:= 0, 
+	fRawDataUpperOffLimit:= 32767, 
+	fScaleDataLowerOffLimit:= 0, 
+	fScaleDataUpperOffLimit:= 10));
+	
+	
+//DUS NU WORDT DE DATA VAN nDisplay van 0 tot 1000 verschaald
+nDisplay:=TO_INT(F_Scale(
+	fRawData:= nPotentiometer, 
+	fRawDataLowerOffLimit:= 0, 
+	fRawDataUpperOffLimit:= 10, 
+	fScaleDataLowerOffLimit:= 0, 
+	fScaleDataUpperOffLimit:= 1000));]]></ST>
+    </Implementation>
+    <LineIds Name="prg_Verschalingmetfunctie">
+      <LineId Id="40" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="7" Count="4" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="29" Count="1" />
+      <LineId Id="22" Count="4" />
+      <LineId Id="16" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

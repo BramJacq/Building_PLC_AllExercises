@@ -15,11 +15,12 @@ END_VAR
 //prg_Teleruptorschakeling();
 //prg_MotorMetDrukknop();
 //prg_TweePompen();
-//prg_DriePompen();]]></ST>
+//prg_DriePompen();
+prg_Verschalingmetfunctie();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="2" Count="0" />
-      <LineId Id="6" Count="8" />
+      <LineId Id="19" Count="9" />
+      <LineId Id="18" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
